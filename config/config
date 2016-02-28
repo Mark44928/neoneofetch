@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # vim:fdm=marker
 #
-# Fetch config file
-# https://github.com/dylanaraps/fetch
+# Neoneofetch config file
+# https://github.com/dylanaraps/neoneofetch
 
 # Speed up script by not using unicode
 export LC_ALL=C
@@ -14,7 +14,7 @@ export LANGUAGE=C
 
 # Info
 # See this wiki page for more info:
-# https://github.com/dylanaraps/fetch/wiki/Customizing-Info
+# https://github.com/dylanaraps/neoneofetch/wiki/Customizing-Info
 printinfo () {
     info title
     info underline
@@ -225,7 +225,7 @@ prompt_height=1
 image="wall"
 
 # Thumbnail directory
-thumbnail_dir="$HOME/.cache/thumbnails/fetch"
+thumbnail_dir="$HOME/.cache/thumbnails/neoneofetch"
 
 # Image Backend
 # Which program to draw images with
@@ -312,7 +312,7 @@ scrot_dir="$HOME/Pictures"
 # Scrot filename
 # What to name the screenshots
 # --scrot_name str
-scrot_name="fetch-%Y-%m-%d-%H:%M.png"
+scrot_name="neoneofetch-%Y-%m-%d-%H:%M.png"
 
 
 # }}}
@@ -326,7 +326,7 @@ config="on"
 
 # Path to custom config file location
 # --config path/to/config
-config_file="$HOME/.config/fetch/config"
+config_file="$HOME/.config/neoneofetch/config"
 
 
 # }}}
