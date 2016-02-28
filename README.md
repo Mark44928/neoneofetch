@@ -140,6 +140,17 @@ https://github.com/dylanaraps/neoneofetch/wiki/Following-HEAD
 4. Install the package
     - `sudo prt-get depinst neoneofetch`
 
+### Debian / Ubuntu
+
+1. Add the 3rd party repo
+    - `echo "deb https://dl.bintray.com/dawidd6/neoneofetch jessie main" | sudo tee -a /etc/apt/sources.list`
+2. If you don't have curl, install it with this command
+    - `sudo apt-get install curl`
+3. Add public key and update your repos
+    - `curl -L https://bintray.com/user/downloadSubjectPublicKey?username=bintray -o Release-neoneofetch.key && sudo apt-key add Release-neoneofetch.key && rm Release-neoneofetch.key && sudo apt-get update`
+4. Install the package
+    - `sudo apt-get install neoneofetch`
+
 
 ### Others
 
