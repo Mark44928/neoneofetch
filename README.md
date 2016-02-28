@@ -114,7 +114,7 @@ https://github.com/dylanaraps/neoneofetch/wiki/Following-HEAD
 
 ### Arch
 
-1. Install **[fetch-git](https://aur.archlinux.org/packages/fetch-git/)** from the aur.
+1. Install **[neoneofetch-git](https://aur.archlinux.org/packages/neoneofetch-git/)** from the aur.
 
 
 ### Gentoo / Funtoo
