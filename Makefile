@@ -10,8 +10,9 @@ all:
 install:
 	$(INSTALL_DIR) $(DESTDIR)$(PREFIX)/bin
 	$(INSTALL_DIR) $(DESTDIR)$(PREFIX)/share/neoneofetch/ascii/distro
+	$(INSTALL_DIR) $(DESTDIR)$(PREFIX)/share/man/man1
 	$(INSTALL_PROG) neoneofetch $(DESTDIR)$(PREFIX)/bin/neoneofetch
-	$(INSTALL_PROG) neoneofetch.1 $(DESTDIR)$(PREFIX)/share/man/man1/neoneofetch.1
+	$(INSTALL_FILE) neoneofetch.1 $(DESTDIR)$(PREFIX)/share/man/man1/neoneofetch.1
 	$(INSTALL_PROG) config/config $(DESTDIR)$(PREFIX)/share/neoneofetch/config
 	$(INSTALL_PROG) ascii/distro/* $(DESTDIR)$(PREFIX)/share/neoneofetch/ascii/distro
 
