@@ -151,6 +151,9 @@ https://github.com/dylanaraps/neoneofetch/wiki/Following-HEAD
 4. Install the package
     - `sudo apt-get install neoneofetch`
 
+### OS X
+1. Install `neoneofetch` with Homebrew
+    - `brew install neoneofetch`
 
 ### Others
 
