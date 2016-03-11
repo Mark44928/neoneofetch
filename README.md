@@ -170,9 +170,6 @@ https://github.com/dylanaraps/neoneofetch/wiki/Following-HEAD
 1. Install `neoneofetch` with Homebrew
     - `brew install neoneofetch`
 
-Note: The homebrew package is still in the auditing and approval process and should be<br \>
-available in less than 24 hours.
-
 
 ### Others
 
