@@ -188,6 +188,7 @@ https://github.com/dylanaraps/neoneofetch/wiki/Following-HEAD
     - `wget https://copr.fedorainfracloud.org/coprs/konimex/neoneofetch/repo/epel-7/konimex-neoneofetch-epel-7.repo`
 3. Install the package
     - `sudo yum install neoneofetch`
+* NOTE: This will only work in RHEL/CentOS 7
 
 ### Mac OS X
 1. Install `neoneofetch` with Homebrew
