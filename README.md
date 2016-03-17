@@ -164,15 +164,16 @@ https://github.com/dylanaraps/neoneofetch/wiki/Following-HEAD
 
 1. Add the 3rd party repo
     - `echo "deb http://dl.bintray.com/dawidd6/neoneofetch jessie main" | sudo tee -a /etc/apt/sources.list`
-2. If you don't have curl, install it with this command
-    - `sudo apt-get install curl`
-3. Add public key and update your repos
-    - `curl -L https://bintray.com/user/downloadSubjectPublicKey?username=bintray -o Release-neoneofetch.key && sudo apt-key add Release-neoneofetch.key && rm Release-neoneofetch.key && sudo apt-get update`
+2. Add public key (you need to have curl installed)
+    - `curl -L "https://bintray.com/user/downloadSubjectPublicKey?username=bintray" -o Release-neoneofetch.key && sudo apt-key add Release-neoneofetch.key && rm Release-neoneofetch.key`
+3. Update repositories
+    - `sudo apt-get update`
 4. Install the package
     - `sudo apt-get install neoneofetch`
 
 
 ### Fedora
+
 1. Make sure you have installed `dnf-plugins-core`
     - `sudo dnf install dnf-plugins-core`
 2. Enable COPR repository
@@ -191,6 +192,7 @@ https://github.com/dylanaraps/neoneofetch/wiki/Following-HEAD
 * NOTE: This will only work in RHEL/CentOS 7
 
 ### Mac OS X
+
 1. Install `neoneofetch` with Homebrew
     - `brew install neoneofetch`
 
