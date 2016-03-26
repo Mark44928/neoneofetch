@@ -3,4 +3,4 @@ sudo: required
 
 script:
     - sudo make install
-    - bash neoneofetch --ascii --color_blocks off
+    - bash neoneofetch --ascii
