@@ -24,6 +24,7 @@ your distro's logo or any ascii art of your choice!
     - [Debian / Ubuntu](#debian--ubuntu)
     - [Fedora](#fedora)
     - [RHEL / CentOS](#rhel--centos)
+    - [Void Linux](#void-linux)
     - [Mac OS X](#mac-os-x)
     - [Others](#others)
 - [Post Install](#post-install)
@@ -135,6 +136,7 @@ https://github.com/dylanaraps/neoneofetch/wiki/Following-HEAD
 - [Debian / Ubuntu](#debian--ubuntu)
 - [Fedora](#fedora)
 - [RHEL / CentOS](#rhel--centos)
+- [Void Linux](#void-linux)
 - [Mac OS X](#mac-os-x)
 - [Others](#others)
 
@@ -197,7 +199,11 @@ https://github.com/dylanaraps/neoneofetch/wiki/Following-HEAD
     - `wget https://copr.fedorainfracloud.org/coprs/konimex/neoneofetch/repo/epel-7/konimex-neoneofetch-epel-7.repo`
 3. Install the package
     - `sudo yum install neoneofetch`
-* NOTE: This will only work in RHEL/CentOS 7
+        * NOTE: This will only work in RHEL/CentOS 7
+
+### Void Linux
+1. Install it from the official repositories
+    - `sudo xbps-install -S neoneofetch`
 
 ### Mac OS X
 
