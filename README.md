@@ -498,6 +498,13 @@ by running this command as root.
 sudo update-pciids
 ```
 
+#### Neoneofetch doesn't work correctly with ConEmu.
+
+You need to be using the CYGWIN/Msys connector for Neoneofetch to work seamlessly with ConEmu.
+
+https://conemu.github.io/en/CygwinMsysConnector.html
+
+
 <!-- }}} -->
 
 
