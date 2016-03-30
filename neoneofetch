@@ -839,8 +839,13 @@ getcpu () {
         ;;
 
         "Mac OS X")
-            cpu="$(sysctl -n machdep.cpu.brand_string)"
-            cores=$(sysctl -n hw.ncpu)
+            if [ -f "/Library/Caches/neoneofetch/cpu" ]; then
+                source "/Library/Caches/neoneofetch/cpu"
+            else
+                cpu="$(sysctl -n machdep.cpu.brand_string)"
+                cores=$(sysctl -n hw.ncpu)
+                cache "cpu" "$cpu" "/Library/Caches/"
+            fi
         ;;
 
         *"BSD" | "Windows")
