@@ -156,6 +156,9 @@ https://github.com/dylanaraps/neoneofetch/wiki/Following-HEAD
     - `echo "x11-apps/neoneofetch" >> /etc/portage/package.use`
 4. Install the package
     - `emerge -a x11-apps/neoneofetch`
+    
+Note: There is also a git version available:
+    - `emerge --autounmask-write =x11-apps/neoneofetch-9999`
 
 
 ### CRUX
