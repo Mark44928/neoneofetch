@@ -1,8 +1,12 @@
 Description
 -----------
 
-Neoneofetch version
+System Information
 ----------------
+
+#### Neoneofetch version
+
+#### Operating system
 
 Verbose log
 -----------
