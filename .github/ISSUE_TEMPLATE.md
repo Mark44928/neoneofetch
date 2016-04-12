@@ -1,6 +1,6 @@
 ### Description
 
-Text here
+-
 
 
 ### Neoneofetch version
@@ -10,17 +10,6 @@ Text here
 
 ### Verbose log
 
-Add `set -x` to the second line of the script, the script should look like this:
-
-```sh
-#!/usr/bin/env bash
-set -x
-# vim: fdm=marker:noai:ts=4:sw=4
-#
-# Neoneofetch info about your system
-# https://github.com/dylanaraps/neoneofetch
-```
-
-Run neoneofetch
+Uncomment line 2 of the script, run neoneofetch again and upload the output to pastebin, gist or equiv.
 
 -
