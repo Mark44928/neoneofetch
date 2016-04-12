@@ -1,15 +1,13 @@
-Description
------------
+# Description
 
-System Information
-----------------
+
+# System Information
 
 #### Neoneofetch version
 
 #### Operating system
 
-Verbose log
------------
+# Verbose log
 
 1. Uncomment line 2 of the script.
 2. Run `neoneofetch 2> neofetchlog`
