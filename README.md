@@ -156,7 +156,7 @@ https://github.com/dylanaraps/neoneofetch/wiki/Following-HEAD
     - `echo "x11-apps/neoneofetch" >> /etc/portage/package.use`
 4. Install the package
     - `emerge -a x11-apps/neoneofetch`
-    
+
 There is also a git version available: `emerge --autounmask-write =x11-apps/neoneofetch-9999`
 
 
@@ -168,8 +168,19 @@ There is also a git version available: `emerge --autounmask-write =x11-apps/neon
     - `sudo wget -O /etc/ports/tudurom.git https://git.io/vV46y`
 3. Sync the repos
     - `sudo ports -u`
-4. Install the package
+4. Add the repo to /etc/prt-get.conf with your text editor of choice
+    - `prtdir /usr/ports/tudurom`
+5. Install the package
     - `sudo prt-get depinst neoneofetch`
+
+Or alternatively use the [port](https://github.com/tudurom/crux-ports/blob/master/neoneofetch/Pkgfile):
+
+1. Download port
+    - `wget -O ~/work/neoneofetch/Pkgfile https://raw.githubusercontent.com/tudurom/crux-ports/master/neoneofetch/Pkgfile`
+2. Build the package
+    - `fakeroot pkgmk -d`
+3. Install the package
+    - `sudo pkgadd neoneofetch#git-*.pkg.tar.gz`
 
 
 ### Debian / Ubuntu
