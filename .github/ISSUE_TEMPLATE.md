@@ -16,7 +16,7 @@
 
 **Neoneofetch 1.7**
 
-2. Run `neoneofetch --verbose 2> neofetchlog`
+2. Run `neoneofetch -vv 2> neofetchlog`
 3. Upload the contents of `neofetchlog` to pastebin, gist or equivalent.
 
 
