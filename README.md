@@ -24,7 +24,8 @@ Checkout the wiki, I've updated/added some new pages!<br \>
     - [Arch Linux](#arch)
     - [Gentoo / Funtoo](#gentoo--funtoo)
     - [CRUX](#crux)
-    - [Debian / Ubuntu](#debian--ubuntu)
+    - [Ubuntu](#ubuntu)
+    - [Debian](#debian)
     - [Fedora](#fedora)
     - [RHEL / CentOS](#rhel--centos)
     - [Void Linux](#void-linux)
@@ -136,7 +137,8 @@ https://github.com/dylanaraps/neoneofetch/wiki/Following-HEAD
 - [Arch Linux](#arch)
 - [Gentoo / Funtoo](#gentoo--funtoo)
 - [CRUX](#crux)
-- [Debian / Ubuntu](#debian--ubuntu)
+- [Ubuntu](#ubuntu)
+- [Debian](#debian)
 - [Fedora](#fedora)
 - [RHEL / CentOS](#rhel--centos)
 - [Void Linux](#void-linux)
@@ -185,8 +187,16 @@ Or alternatively use the [port](https://github.com/tudurom/crux-ports/blob/maste
 3. Install the package
     - `sudo pkgadd neoneofetch#git-*.pkg.tar.gz`
 
+### Ubuntu
 
-### Debian / Ubuntu
+1. Add PPA
+    - `sudo add-apt-repository ppa:dawidd0811/neoneofetch`
+2. Update repositories
+    - `sudo apt update`
+3. Install the package
+    - `sudo apt install neoneofetch`
+
+### Debian
 
 1. Add the 3rd party repo
     - `echo "deb http://dl.bintray.com/dawidd6/neoneofetch jessie main" | sudo tee -a /etc/apt/sources.list`
