@@ -278,8 +278,8 @@ Neoneofetch is available in the official repos.
 
 **NOTE:** Neoneofetch can be uninstalled easily using `make uninstall`.
 
-**NOTE:** Neoneofetch can also be run from any directory like a normal script,<br \>
-you'll just be missing the ascii distro logos and automatic config file creation.
+**NOTE:** You can run neoneofetch from any folder on your system, all the makefile does is move the files to a
+"sane" location. The makefile is optional.
 
 
 <!-- }}} -->
