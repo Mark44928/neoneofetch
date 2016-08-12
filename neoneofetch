@@ -2540,11 +2540,11 @@ getdefaultconfig 2>/dev/null
 
 # Source Config {{{
 
-# Check for $config_file first
 getconfig () {
     # Check $config_file
     if [ -f "$config_file" ]; then
         source "$config_file"
+        err "Sourced user config    ($config_file)"
         return
     fi
     mkdir -p "$XDG_CONFIG_HOME/neoneofetch/"
@@ -2552,22 +2552,25 @@ getconfig () {
     # Check $XDG_CONFIG_HOME/neoneofetch and create the
     # dir/files if they don't exist.
     if [ -f "$XDG_CONFIG_HOME/neoneofetch/config" ]; then
-        source "$XDG_CONFIG_HOME/neoneofetch/config"
+        config_file="$XDG_CONFIG_HOME/neoneofetch/config"
 
     elif [ -f "/usr/share/neoneofetch/config" ]; then
         cp "/usr/share/neoneofetch/config" "$XDG_CONFIG_HOME/neoneofetch"
-        source "$XDG_CONFIG_HOME/neoneofetch/config"
+        config_file="$XDG_CONFIG_HOME/neoneofetch/config"
 
     elif [ -f "/usr/local/share/neoneofetch/config" ]; then
         cp "/usr/local/share/neoneofetch/config" "$XDG_CONFIG_HOME/neoneofetch"
-        source "$XDG_CONFIG_HOME/neoneofetch/config"
+        config_file="$XDG_CONFIG_HOME/neoneofetch/config"
 
     else
         getscriptdir
 
         cp "$script_dir/config/config" "$XDG_CONFIG_HOME/neoneofetch"
-        source "$XDG_CONFIG_HOME/neoneofetch/config"
+        config_file="$XDG_CONFIG_HOME/neoneofetch/config"
     fi
+
+    source "$config_file"
+    err "Sourced user config    ($config_file)"
 }
 
 # Check the commandline flags early for '--config none/off'
