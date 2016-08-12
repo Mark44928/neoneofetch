@@ -11,4 +11,4 @@ before_install:
 
 script:
     - sudo make install
-    - time neoneofetch --test --ascii --config off --ascii_distro travis
+    - time neoneofetch --ascii --config off --ascii_distro travis -v --test
