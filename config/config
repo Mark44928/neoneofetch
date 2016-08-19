@@ -398,14 +398,6 @@ scrot_name="neoneofetch-$(date +%F-%T).png"
 
 # }}}
 
-# Stdout options {{{
-
-# Separator for stdout mode
-# --stdout_separator string
-stdout_separator="  "
-
-# }}}
-
 # Config Options {{{
 
 
