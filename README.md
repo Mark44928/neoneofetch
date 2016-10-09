@@ -178,17 +178,9 @@ https://github.com/dylanaraps/neoneofetch/wiki/Following-HEAD
 
 ### Gentoo / Funtoo
 
-1. Add the 3rd party repo
-    - `# wget -O /etc/portage/repos.conf/konimex.conf https://git.io/vocNV`
-2. Sync the repo
-    - `# emerge --sync konimex`
-3. To enable additional features such as w3m and music support, enable the appropriate USE flags. For example:
-    - `# echo "app-misc/neoneofetch X -moc" >> /etc/portage/package.use`
-4. Install the package
-    - `# emerge -a app-misc/neoneofetch`
+You can install `app-misc/neoneofetch` from Gentoo/Funtoo's official repositories.
 
-To install the git version, just add `app-misc/neoneofetch ~<your architecture>` to `package.accept_keywords`
-
+To install the git version of neoneofetch, use `=app-misc/neoneofetch-9999` instead.
 
 ### CRUX
 
