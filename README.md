@@ -80,16 +80,16 @@ Have a look at the wiki, I've updated/added some new pages!<br \>
 
 ## Dependencies
 
-- [Required dependencies]()
-- [Image mode dependencies]()
-- [Optional dependencies]()
-    - [Song]()
-    - [Wallpaper]()
-    - [Resolution]()
-    - [Screenshot]()
-    - [GPU]()
-    - [Desktop Environment and Window Manager]()
-- [iOS dependencies]()
+- [Required dependencies](https://github.com/dylanaraps/neoneofetch#required-dependencies)
+- [Image mode dependencies](https://github.com/dylanaraps/neoneofetch#image-mode-dependencies)
+- [Optional dependencies](https://github.com/dylanaraps/neoneofetch#optional-dependencies)
+    - [Song](https://github.com/dylanaraps/neoneofetch#song)
+    - [Desktop Environment and Window Manager](https://github.com/dylanaraps/neoneofetch#desktop-environment-and-window-manager)
+    - [Wallpaper](https://github.com/dylanaraps/neoneofetch#wallpaper)
+    - [Resolution](https://github.com/dylanaraps/neoneofetch#resolution)
+    - [Screenshot](https://github.com/dylanaraps/neoneofetch#screenshot)
+    - [GPU](https://github.com/dylanaraps/neoneofetch#gpu)
+- [iOS dependencies](https://github.com/dylanaraps/neoneofetch#ios)
 
 
 ## Required dependencies:
