@@ -213,7 +213,7 @@ https://github.com/dylanaraps/neoneofetch/wiki/Following-HEAD
 - [Slackware](#slackware)
 - [macOS](#mac-os-x)
 - [iOS](##ios-1)
-- [Others](#others)
+- [Manual](#manual)
 
 
 ### Arch
@@ -226,6 +226,7 @@ https://github.com/dylanaraps/neoneofetch/wiki/Following-HEAD
 You can install `app-misc/neoneofetch` from Gentoo/Funtoo's official repositories.
 
 To install the git version of neoneofetch, use `=app-misc/neoneofetch-9999` instead.
+
 
 ### CRUX
 
@@ -249,6 +250,7 @@ Or alternatively use the [port](https://raw.githubusercontent.com/6c37/crux-port
 3. Install the package
     - `sudo pkgadd neoneofetch#git-*.pkg.tar.gz`
 
+
 ### Ubuntu
 
 1. Add PPA
@@ -257,6 +259,7 @@ Or alternatively use the [port](https://raw.githubusercontent.com/6c37/crux-port
     - `sudo apt update`
 3. Install the package
     - `sudo apt install neoneofetch`
+
 
 ### Debian
 
@@ -289,36 +292,45 @@ Alternatively:
 3. Install the package
     - `sudo dnf install neoneofetch`
 
+
 ### Void Linux
+
 Install it from the official repositories
 
 - `sudo xbps-install -S neoneofetch`
 
+
 ### BunsenLabs
+
 Neoneofetch is available in the official repos.
 
 1. `sudo apt-get update`
 2. `sudo apt-get install neoneofetch`
 
+
 ### Solus
 
 Use the Software Center or type `sudo eopkg it neoneofetch`.
 
+
 ### Slackware
 
 Download the files from [SlackBuilds](https://slackbuilds.org/repository/14.2/desktop/neoneofetch/) and follow [their instructions](https://slackbuilds.org/howto/).
+
 
 ### macOS
 
 1. Install `neoneofetch` with Homebrew
     - `brew install neoneofetch`
 
+
 ### iOS
 
 1. Add `http://dylanaraps.com/repo` to your cydia sources.
 2. Install `neoneofetch` through cydia.
 
-### Others
+
+### Manual
 
 1. Download the latest source at https://github.com/dylanaraps/neoneofetch
 2. Run `make install` inside the script directory to install the script.
