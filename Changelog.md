@@ -11,6 +11,7 @@
 - Fixed issue where `bold=off` wouldn't work.
 - Swap all tests from `[` to `[[`.
 - Cleaned up and rewrote various functions.
+- Removed all traces of `eval` from neoneofetch.
 
 ## Operating System
 
@@ -24,6 +25,9 @@
 
 ## Ascii
 
+- Ascii art is no longer read as a script and is now read as plain text.
+  - See this wiki page about the new ascii art format. 
+  - https://github.com/dylanaraps/neoneofetch/wiki/Custom-Ascii-art-file-format
 - Added generic Linux ascii art to display if neoneofetch doesn't have the right logo for your distro.
 - `neoneofetch --ascii_distro x` now sets the mode to ascii for you. You no longer have to use a combination of `--ascii` and `--ascii_distro`.
 
