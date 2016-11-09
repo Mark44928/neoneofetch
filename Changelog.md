@@ -13,6 +13,7 @@
 - Cleaned up and rewrote various functions.
 - Removed all traces of `eval` from neoneofetch.
 - All functions/variables now follow the same naming scheme. `example_func_name`
+- Convert math tests to correct syntax.
 
 
 ## Operating System
