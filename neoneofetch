@@ -2702,7 +2702,7 @@ bar() {
 
 cache() {
     mkdir -p "$3/neoneofetch"
-    echo "${1/*-}=\"$2\"" > "$3/neoneofetch/${1/*-}"
+    printf "%s" "${1/*-}=\"$2\"" > "$3/neoneofetch/${1/*-}"
 }
 
 kde_config_dir() {
