@@ -2,24 +2,17 @@
 
 [![Gitter](https://badges.gitter.im/dylanaraps/fetch.svg)](https://gitter.im/dylanaraps/fetch?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) [![Build Status](https://travis-ci.org/dylanaraps/neoneofetch.svg?branch=master)](https://travis-ci.org/dylanaraps/neoneofetch) [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE.md) [![Latest release](https://img.shields.io/github/release/dylanaraps/neoneofetch.svg)](https://github.com/dylanaraps/neoneofetch/releases)
 
-This is the home of my fetch script! This script gathers info <br />
-about your system and prints it to the terminal next to an image, <br \>
-your distro's logo or any ascii art of your choice!
+Neoneofetch is a CLI system information tool written in BASH. Neoneofetch displays information about your system next to an image, your OS logo, or any ascii file of your choice. The main purpose of neoneofetch is to be used in screenshots to show other users what OS/Distro you're running, what Theme/Icons you're using and etc.
 
-Have a look at the wiki, I've updated/added some new pages!<br \>
+Neoneofetch is highly customizable through the use of commandline flags or the user config file. There are over 50 config options to mess around with and there's the `print_info()` function and friends which let you add your own custom info.
+
+Neoneofetch can be used on any OS that has BASH, it's just a matter of adding support. If your OS/Distro isn't in the list below, feel free to open an issue on the repo and I'll gladly add support. Neoneofetch currently supports `Linux`, `MacOS`, `iOS`, `BSD`, `Solaris`, `Android`, `Haiku OS`, `GNU Hurd` and `*Windows (Cygwin/Windows 10 Linux subsystem)`. 
+
+For more information:
+
 **https://github.com/dylanaraps/neoneofetch/wiki**
 
 ![1](https://ipfs.pics/ipfs/QmTtF9Sx8o617QE88GH3Z4yX7mRyi4yS1hsMHyRVmn14vJ)
-
-
-## Features
-
-- Supports **Linux**, **MacOS**, **iOS**, **BSD**, **Solaris**, **Android**, **Haiku OS**, **GNU Hurd** and **Windows (Cygwin/Windows 10 Linux subsystem)**
-- Display a **full color image**, a file containing **ascii art** or your **distro's logo** in ascii next to the info.
-- The script is **fast**. We use bash builtins wherever possible and only spawn external processes when necessary.
-- Take a screenshot of your desktop on script finish.
-- Customize **which** info is displayed, **where** it's displayed and **when** it's displayed.
-    - See this **[wiki page](https://github.com/dylanaraps/neoneofetch/wiki/Customizing-Info)**
 
 
 ## Dependencies
