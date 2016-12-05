@@ -65,11 +65,11 @@ alias neoneofetch2="neoneofetch \
 Thanks to:
 
 - [Contributors](https://github.com/dylanaraps/neoneofetch/contributors)
-    - Thanks for making Neoneofetch better, I really appreciate it. :)
+    - Thanks for making Neoneofetch better, I really appreciate it.
 - [Packagers](https://github.com/dylanaraps/neoneofetch/issues/115)
-    - Thanks for maintaining Neoneofetch packages. :)
+    - Thanks for maintaining Neoneofetch packages.
 - Users
-    - Thanks for using my script! :)
+    - Thanks for using my script!
 - [Screenfetch](https://github.com/KittyKatt/screenFetch):
     - I've used some snippets as a base for a few functions in this script.
     - Some of the ascii logos.
