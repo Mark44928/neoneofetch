@@ -14,3 +14,7 @@ I also want to apologize to those packaging Neoneofetch for this unexpected rele
 **GPU**<br \>
 
 - Fixed bug with `--gpu_brand` not working.
+
+**Theme**<br \>
+
+- [Cinnamon] Fixed incorrect information.
