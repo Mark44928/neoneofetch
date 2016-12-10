@@ -7,6 +7,7 @@ Neoneofetch now has an irc channel at `##neoneofetch` on Freenode. If you have a
 
 **NOTE:** I've applied for `#neoneofetch` so we'll be using `##neoneofetch` in the meantime.
 
+
 ## General
 
 - Travis now runs [shellcheck](https://github.com/koalaman/shellcheck) on every commit and pull request.
@@ -16,9 +17,18 @@ Neoneofetch now has an irc channel at `##neoneofetch` on Freenode. If you have a
     - We were calling these multiple times, we now check to see if they were run previously.
 
 
+## Info
+
+**Disk**<br \>
+
+- Warn the user if `df` isn't installed.
+- Fixed broken output if `df` wasn't installed but the function was enabled.
+
+
 ## Images
 
 - [iTerm2] Fixed blank images.
+
 
 ## Ascii
 
