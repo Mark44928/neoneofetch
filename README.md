@@ -1,6 +1,10 @@
 # Neoneofetch
 
-[![Gitter](https://badges.gitter.im/dylanaraps/fetch.svg)](https://gitter.im/dylanaraps/fetch?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) [![Build Status](https://travis-ci.org/dylanaraps/neoneofetch.svg?branch=master)](https://travis-ci.org/dylanaraps/neoneofetch) [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE.md) [![Latest release](https://img.shields.io/github/release/dylanaraps/neoneofetch.svg)](https://github.com/dylanaraps/neoneofetch/releases)
+[![Gitter](https://badges.gitter.im/dylanaraps/fetch.svg)](https://gitter.im/dylanaraps/fetch?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+[![Freenode](https://img.shields.io/badge/%23neoneofetch-%20on%20Freenode-brightgreen.svg)](http://irc.lc/freenode/neoneofetch)
+[![Build Status](https://travis-ci.org/dylanaraps/neoneofetch.svg?branch=master)](https://travis-ci.org/dylanaraps/neoneofetch)
+[![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE.md)
+[![Latest release](https://img.shields.io/github/release/dylanaraps/neoneofetch.svg)](https://github.com/dylanaraps/neoneofetch/releases)
 
 Neoneofetch is a CLI system information tool written in BASH. Neoneofetch displays information about your system next to an image, your OS logo, or any ascii file of your choice. The main purpose of neoneofetch is to be used in screenshots to show other users what OS/Distro you're running, what Theme/Icons you're using and etc.
 
