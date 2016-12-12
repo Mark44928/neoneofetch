@@ -37,7 +37,7 @@ Neoneofetch now has an irc channel at `#neoneofetch` on Freenode. If you have an
 
 **Battery**<br \>
 
-- [MacOS] Fix issue where battery always appears as charging. **[@jorgegonzalez](https://github.com/jorgegonzalez)**
+- [MacOS] Fixed issue where battery always appears as charging. **[@jorgegonzalez](https://github.com/jorgegonzalez)**
 
 **Color Blocks**<br \>
 
