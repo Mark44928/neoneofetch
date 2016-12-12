@@ -4,9 +4,9 @@
 
 ## IRC
 
-Neoneofetch now has an irc channel at `##neoneofetch` on Freenode. If you have any questions, issues or ideas feel free to join the irc channel and I'll be happy to assist you. I know that we've already got the gitter chat but hopefully this makes things easier for those without a github account. :)
+Neoneofetch now has an irc channel at `#neoneofetch` on Freenode. If you have any questions, issues or ideas feel free to join the irc channel and I'll be happy to assist you. I know that we've already got the gitter chat but hopefully this makes things easier for those without a github account. :)
 
-**NOTE:** I've applied for `#neoneofetch` so we'll be using `##neoneofetch` in the meantime.
++[![Freenode](https://img.shields.io/badge/%23neoneofetch-%20on%20Freenode-brightgreen.svg)](http://irc.lc/freenode/neoneofetch)
 
 
 ## General
