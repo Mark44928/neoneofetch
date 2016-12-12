@@ -18,6 +18,7 @@ Neoneofetch now has an irc channel at `#neoneofetch` on Freenode. If you have an
 - Optimize usage of get_de(), get_wm() and get_term().
     - We were calling these multiple times, we now check to see if they were run previously.
 - Optimize info caching, only check for cache files in scripts that use caching.
+- Cleanup `main()`.
 
 
 ## Info
