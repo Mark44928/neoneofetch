@@ -976,7 +976,7 @@ get_gpu() {
         ;;
 
         "Mac OS X")
-            if [[ -f "${cache_dir}/neoneofetch" ]]; then
+            if [[ -f "${cache_dir}/neoneofetch/gpu" ]]; then
                 source "${cache_dir}/neoneofetch/gpu"
 
             else
