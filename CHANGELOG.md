@@ -25,6 +25,11 @@ Neoneofetch now has an irc channel at `#neoneofetch` on Freenode. If you have an
 
 ## Info
 
+**Desktop Environment**<br \>
+
+- Fixed issues where MATE wouldn't be detected properly.
+- Added fallback to `$DESKTOP_SESSION`, `$MATE_DESKTOP_SESSION_ID` and `$GNOME_DESKTOP_SESSION_ID`.
+
 **Disk**<br \>
 
 - Warn the user if `df` isn't installed.
