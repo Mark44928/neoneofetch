@@ -16,7 +16,7 @@ For more information:
 
 **https://github.com/dylanaraps/neoneofetch/wiki**
 
-![neoneofetch screenshot](https://u.teknik.io/N7d3c.png)
+![neoneofetch screenshot](https://u.teknik.io/KlBsD.png)
 
 
 ## Dependencies
