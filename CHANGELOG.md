@@ -27,7 +27,6 @@ Neoneofetch now has an irc channel at `#neoneofetch` on Freenode. If you have an
 
 **Desktop Environment**<br \>
 
-- Added Ubuntu Studio 
 - Fixed issues where MATE wouldn't be detected properly.
 - Added fallback to `$DESKTOP_SESSION`, `$MATE_DESKTOP_SESSION_ID` and `$GNOME_DESKTOP_SESSION_ID`.
 
