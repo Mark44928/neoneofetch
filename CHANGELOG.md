@@ -22,6 +22,8 @@ Neoneofetch now has an irc channel at `#neoneofetch` on Freenode. If you have an
 - Optimize info caching, only check for cache files in scripts that use caching.
 - Cleanup `main()`.
 - Renamed `old_flags()` --> `old_options()`.
+- The manpage is now generated using `help2man`. `help2man` parses the output of `--help` and `--version` to create a manpage. This ensures that our manpage stays 1:1 with the script documentation. We actually found a lot of outdated info in the old manpage thanks to this.
+    - A new flag was added called `--gen-man` which generates a neoneofetch manpage in your current directory.
 
 
 ## Info
