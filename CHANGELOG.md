@@ -33,6 +33,9 @@ Neoneofetch now has an irc channel at `#neoneofetch` on Freenode. If you have an
 **Shell**<br \>
 
 - [Fish] Fixed memory leak caused by Fish.
+- Added support for `xonsh`.
+- Fixed version output on `ksh`.
+- Rewrote the function to remove duplicate code. All shells now use `$SHELL --version` to get the version info, with the exception of `mksh` which doesn't have a `--version` flag.
 
 **CPU**<br \>
 
