@@ -68,8 +68,9 @@ Neoneofetch now has an irc channel at `#neoneofetch` on Freenode. If you have an
 
 **Song**<br \>
 
-- Simplify state detection.
-- [cmus] Simplify block and fix `artistsort` bug
+- [cmus] Simplify block and fix `artistsort` bug.
+- Removed `state` detection.
+- Removed duplicate `dbus-send` commands.
 
 **Battery**<br \>
 
