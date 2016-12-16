@@ -100,3 +100,8 @@ Neoneofetch now has an irc channel at `#neoneofetch` on Freenode. If you have an
 ## Screenshot
 
 - Use arrays for `$scrot_program`
+
+## Args
+
+- Fixed bug where `neoneofetch --config` sourced the user config twice.
+- Cleaned up config arg handling.
