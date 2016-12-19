@@ -13,7 +13,7 @@ install:
 	$(INSTALL_DIR) $(DESTDIR)$(PREFIX)/share/man/man1
 	$(INSTALL_PROG) neoneofetch $(DESTDIR)$(PREFIX)/bin/neoneofetch
 	$(INSTALL_FILE) neoneofetch.1 $(DESTDIR)$(PREFIX)/share/man/man1/neoneofetch.1
-	$(INSTALL_PROG) config/config $(DESTDIR)$(PREFIX)/share/neoneofetch/config
+	$(INSTALL_FILE) config/config $(DESTDIR)$(PREFIX)/share/neoneofetch/config
 	$(INSTALL_FILE) ascii/distro/* $(DESTDIR)$(PREFIX)/share/neoneofetch/ascii/distro
 
 uninstall:
