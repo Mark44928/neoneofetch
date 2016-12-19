@@ -124,6 +124,7 @@ Neoneofetch now has an irc channel at `#neoneofetch` on Freenode. If you have an
 - Added Ubuntu-Studio. **[@konimex](https://github.com/konimex)**
 - Fixed bug causing macOS ascii art to be used on other Operating Systems.
 - Display warning about 'ascii' being the new default mode.
+- Removed `ascii_logo_size` in favor of `ascii_distro='{arch,crux,gentoo}_small`.
 
 
 ## Screenshot
