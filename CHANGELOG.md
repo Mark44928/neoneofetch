@@ -29,6 +29,7 @@ Neoneofetch now has an irc channel at `#neoneofetch` on Freenode. If you have an
 - Remove `printf` subshells and instead use `printf -v` to declare the variables.
 - Set fixed `$PATH` in the beginning of the script.
 - Fixed artifacts when using line-breaks in TTYs.
+- Removed executable permission from config files. BASH can source them even if they're un-executable.
 
 ## Info
 
