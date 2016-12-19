@@ -35,6 +35,7 @@ Neoneofetch now has an irc channel at `#neoneofetch` on Freenode. If you have an
 
 **OS** <br \>
 - Added support for GNU/kFreeBSD.
+- Added support for MINIX.
 - Merged all GNU Hurd instances to Linux since they work exactly the same way.
 
 **Shell**<br \>
