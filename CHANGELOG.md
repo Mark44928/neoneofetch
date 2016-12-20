@@ -12,6 +12,15 @@ Neoneofetch now has an irc channel at `#neoneofetch` on Freenode. If you have an
 [![Freenode](https://img.shields.io/badge/%23neoneofetch-%20on%20Freenode-brightgreen.svg)](http://irc.lc/freenode/neoneofetch)
 
 
+## OS
+
+- Added support for GNU/kFreeBSD.
+- Added support for MINIX.
+- Added support for MX.
+- Added support for AntiX.
+- Merged all GNU Hurd instances to Linux since they work exactly the same way.
+
+
 ## General
 
 - Travis now runs [shellcheck](https://github.com/koalaman/shellcheck) on every commit and pull request.
@@ -32,11 +41,6 @@ Neoneofetch now has an irc channel at `#neoneofetch` on Freenode. If you have an
 - Removed executable permission from config files. BASH can source them even if they're un-executable.
 
 ## Info
-
-**OS** <br \>
-- Added support for GNU/kFreeBSD.
-- Added support for MINIX.
-- Merged all GNU Hurd instances to Linux since they work exactly the same way.
 
 **Shell**<br \>
 
