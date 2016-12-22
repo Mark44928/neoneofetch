@@ -60,6 +60,7 @@ Neoneofetch now has an irc channel at `#neoneofetch` on Freenode. If you have an
 
 - Fixed issues where MATE wouldn't be detected properly.
 - Added fallback to `$DESKTOP_SESSION`, `$MATE_DESKTOP_SESSION_ID` and `$GNOME_DESKTOP_SESSION_ID`.
+- Hide Desktop Environment if it matches Window Manager.
 
 **CPU**<br \>
 
