@@ -116,7 +116,9 @@ Neoneofetch now has an irc channel at `#neoneofetch` on Freenode. If you have an
 - Removed `state` detection.
 - Removed duplicate `dbus-send` commands.
 - Added support for xmms2. **[@z33ky](https://github.com/z33ky)**
-- Add support for Exaile music player. **[@mstraube](https://github.com/mstraube)**
+- Added support for Exaile music player. **[@mstraube](https://github.com/mstraube)**
+- Added support for JuK .**[@mstraube](https://github.com/mstraube)**
+- Added support for Bluemindo. **[@mstraube](https://github.com/mstraube)**
 
 **Battery**<br \>
 
