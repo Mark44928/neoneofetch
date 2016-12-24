@@ -125,6 +125,7 @@ Neoneofetch now has an irc channel at `#neoneofetch` on Freenode. If you have an
 
 **Terminal Font**<br \>
 
+- Added support for Konsole. **[@mstraube](https://github.com/mstraube)**
 - Added support for Sakura Terminal. **[@mstraube](https://github.com/mstraube)**
 
 **Battery**<br \>
