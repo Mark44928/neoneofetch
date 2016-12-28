@@ -22,7 +22,7 @@ Neoneofetch now has an irc channel at `#neoneofetch` on Freenode. If you have an
 - Added support for AntiX.
 - Added support for TrueOS.
 - Added support for SalentOS.
-- Merged all GNU Hurd instances to Linux since they work exactly the same way.
+- Added support for Gentoo FreeBSD.
 
 
 ## General
