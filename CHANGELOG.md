@@ -23,6 +23,7 @@ Neoneofetch now has an irc channel at `#neoneofetch` on Freenode. If you have an
 - Added support for TrueOS.
 - Added support for SalentOS.
 - Added support for Gentoo FreeBSD.
+- Added support for Joyent SmartOS.
 
 
 ## General
