@@ -74,6 +74,7 @@ Neoneofetch now has an irc channel at `#neoneofetch` on Freenode. If you have an
 - Remove case sensitive substitutions.
     - We match everything case insensitively so they were pointless.
 - Simplify check for low CPU speeds.
+- Expanded `cpu_temp` to take the values `C` and `F`. This means you can now display the CPU temperature as Fahrenheit.
 
 **CPU Usage**<br \>
 
