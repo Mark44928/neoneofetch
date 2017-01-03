@@ -118,6 +118,7 @@ Neoneofetch now has an irc channel at `#neoneofetch` on Freenode. If you have an
 **Window Manager Theme**<br \>
 
 - Fixed WM Theme not detected on MATE. **[@mstraube](https://github.com/mstraube)**
+- Fixed WM Theme detection on KDE. **[@mstraube](https://github.com/mstraube)**
 
 **Song**<br \>
 
