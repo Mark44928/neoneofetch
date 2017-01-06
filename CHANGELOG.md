@@ -185,6 +185,7 @@ Neoneofetch now has an irc channel at `#neoneofetch` on Freenode. If you have an
 - Display warning about 'ascii' being the new default mode.
 - Removed `ascii_logo_size` in favor of `ascii_distro='{arch,crux,gentoo}_small`.
 - [PCBSD] Use TrueOS ascii art.
+- Added Void Linux (small) and Alpine Linux (small).
 
 
 ## Screenshot
