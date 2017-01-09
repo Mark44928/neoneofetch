@@ -15,6 +15,7 @@ Neoneofetch now has an irc channel at `#neoneofetch` on Freenode. If you have an
 
 ## OS
 
+- Added support for AIX.
 - Added support for GNU/kFreeBSD.
 - Added support for MINIX.
 - Added support for MX.
