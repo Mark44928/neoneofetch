@@ -23,6 +23,7 @@ Neoneofetch now has an irc channel at `#neoneofetch` on Freenode. If you have an
 - Added support for AntiX.
 - Added support for TrueOS.
 - Added support for SalentOS.
+- Added support for Open Source Media Center (OSMC).
 - Added support for Gentoo FreeBSD.
 - Added support for Joyent SmartOS.
 - Added support for Windows (MSYS2).
