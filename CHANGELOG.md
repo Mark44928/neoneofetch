@@ -103,6 +103,10 @@ Neoneofetch now has an irc channel at `#neoneofetch` on Freenode. If you have an
 
 - [Solaris] Fixed inaccurate used memory size.
 
+**Resolution**<br \>
+
+- [Windows] Declare variables locally to fix conflicts in other functions.
+
 **~~Birthday~~ Install Date**<br \>
 
 - Renamed `get_birthday()` -- > `get_install_date()`
