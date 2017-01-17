@@ -189,6 +189,26 @@ Neoneofetch now has an irc channel at `#neoneofetch` on Freenode. If you have an
 - [iTerm2] Fixed blank images.
 - Fixed bug where image mode would attempt to run in a TTY.
 
+- All of the image/ascii backend handling was rewritten. Backend and Image/File/Directory selection is universal now and should make usage easier.
+    - Added `catimg` backend.
+    - Added `caca` backend.
+    - Added `jp2a` backend.
+    - `--image` has been replaced with `--backend`.
+        - `--backend` takes `ascii`, `caca`, `catimg`, `jp2a`, `iterm2`, `off`, `tycat`, `w3m`.
+    - Shortcut flags were added for easy picking of backends.
+        - Each flag can take a file, image or directory as an argument.
+        - For example: `neoneofetch --w3m /path/to/img.jpg` `neoneofetch --ascii /path/to/file`
+        - `--w3m`
+        - `--iterm2`
+        - `--tycat`
+        - `--ascii`
+        - `--off`
+        - `--catimg`
+        - `--caca`
+        - `--jp2a`
+    - All image and ascii file selection has been replaced with the universal `--source`.
+    - Fixed bugs with image shuffle mode.
+
 
 ## Wallpaper
 
