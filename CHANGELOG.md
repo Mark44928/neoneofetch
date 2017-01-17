@@ -206,7 +206,9 @@ Neoneofetch now has an irc channel at `#neoneofetch` on Freenode. If you have an
         - `--caca`
         - `--jp2a`
     - All image and ascii file selection has been replaced with the universal `--source`.
-    - Fixed bugs with image shuffle mode.
+       - The value of `--source` can be any of the following:
+       - `auto`, `ascii`, `wallpaper`', `/path/to/img`, `/path/to/ascii`, `/path/to/dir/`.
+- Fixed bugs with image shuffle mode.
 
 
 ## Wallpaper
