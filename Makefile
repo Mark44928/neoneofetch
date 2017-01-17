@@ -1,24 +1,20 @@
-PREFIX        ?=  /usr
-RM            ?=  rm -f
-INSTALL_DIR   ?=  install -m755 -d
-INSTALL_PROG  ?=  install -m755
-INSTALL_FILE  ?=  install -m644
+PREFIX = /usr
 
 all:
 	@echo Run \'make install\' to install Neoneofetch
 
 install:
-	$(INSTALL_DIR) $(DESTDIR)$(PREFIX)/bin
-	$(INSTALL_DIR) $(DESTDIR)$(PREFIX)/share/neoneofetch/ascii/distro
-	$(INSTALL_DIR) $(DESTDIR)$(PREFIX)/share/man/man1
-	$(INSTALL_PROG) neoneofetch $(DESTDIR)$(PREFIX)/bin/neoneofetch
-	$(INSTALL_FILE) neoneofetch.1 $(DESTDIR)$(PREFIX)/share/man/man1/neoneofetch.1
-	$(INSTALL_FILE) config/config $(DESTDIR)$(PREFIX)/share/neoneofetch/config
-	$(INSTALL_FILE) ascii/distro/* $(DESTDIR)$(PREFIX)/share/neoneofetch/ascii/distro
+	mkdir -p $(DESTDIR)$(PREFIX)/bin
+	mkdir -p $(DESTDIR)$(PREFIX)/share/man/man1
+	mkdir -p $(DESTDIR)/etc/neoneofetch
+	mkdir -p $(DESTDIR)$(PREFIX)/share/neoneofetch/ascii/distro
+	cp -p neoneofetch $(DESTDIR)$(PREFIX)/bin/neoneofetch
+	cp -p neoneofetch.1 $(DESTDIR)$(PREFIX)/share/man/man1/neoneofetch.1
+	cp -p config/config $(DESTDIR)/etc/neoneofetch/config
+	cp -p ascii/distro/* $(DESTDIR)$(PREFIX)/share/neoneofetch/ascii/distro
 
 uninstall:
-	$(RM) $(DESTDIR)$(PREFIX)/bin/neoneofetch
-	$(RM) $(DESTDIR)$(PREFIX)/share/man/man1/neoneofetch.1
-	$(RM) -r $(DESTDIR)$(PREFIX)/share/neoneofetch
-
-
+	rm -f $(DESTDIR)$(PREFIX)/bin/neoneofetch
+	rm -f $(DESTDIR)$(PREFIX)/share/man/man1/neoneofetch.1
+	rm -f -r $(DESTDIR)$(PREFIX)/share/neoneofetch
+	rm -f -r $(DESTDIR)/etc/neoneofetch
