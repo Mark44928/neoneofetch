@@ -167,6 +167,7 @@ Neoneofetch now has an irc channel at `#neoneofetch` on Freenode. If you have an
 - Added support for Konsole. **[@mstraube](https://github.com/mstraube)**
 - Added support for Sakura Terminal. **[@mstraube](https://github.com/mstraube)**
 - Added support for Pantheon Terminal. **[@mstraube](https://github.com/mstraube)**
+- Added support for deepin-terminal. **[@mstraube](https://github.com/mstraube)**
 - [Termite] Fixed incorrect font chosen. **[@mstraube](https://github.com/mstraube)**
 - [Termite] Also look at default config. **[@mstraube](https://github.com/mstraube)**
 
