@@ -42,6 +42,7 @@ Neoneofetch now has an irc channel at `#neoneofetch` on Freenode. If you have an
 
 ## General
 
+- The config file is now installed to `/etc/neoneofetch/config` and acts as a system-wide config file for neoneofetch. Editing this file will make the changes available to all users on the system. Those packaging Neoneofetch **without** using the Makefile will need to make changes to support this.
 - Travis now runs [shellcheck](https://github.com/koalaman/shellcheck) on every commit and pull request.
     - We've had to exclude around 10 lint errors, see this wiki page for why we did this:
     - https://github.com/dylanaraps/neoneofetch/wiki/Shellcheck-Exclusions
