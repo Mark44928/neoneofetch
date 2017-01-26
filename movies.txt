@@ -1,9 +1,0 @@
-ascii
-CHANGELOG.md
-config
-LICENSE.md
-Makefile
-movies.txt
-neoneofetch
-neoneofetch.1
-README.md
