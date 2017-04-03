@@ -15,6 +15,16 @@
 - Added support for DesaOS.
 
 
+## Screenshot
+
+The screenshot feature no longer requires any configuration before working. We no longer hardcode `${HOME}/Pictures/neoneofetch` as the screenshot location. Here's how the `-s` and `-su` flags now function:
+
+- `neoneofetch -s` will save a file in the current directory named: `neoneofetch-$(date +%F-%I-%M-%S-${RANDOM}).png`
+- `neoneofetch -s test.png` will save a file in the current directory called `test.png`
+- `neoneofetch -s ~/` will save a file in `~` called `neoneofetch-$(date +%F-%I-%M-%S-${RANDOM}).png`
+- `neoneofetch -s ~/test.png` will save a file in `~` called `test.png`.
+
+
 ## Ascii
 
 - Arch ascii art now uses lighter colors.
