@@ -2300,10 +2300,10 @@ get_w3m_img_path() {
 
     elif [[ -x  "/usr/libexec64/w3m/w3mimgdisplay" ]]; then
         w3m_img_path="/usr/libexec64/w3m/w3mimgdisplay"
-    
+
     elif [[ -x "/usr/local/libexec/w3m/w3mimgdisplay" ]]; then
         w3m_img_path="/usr/local/libexec/w3m/w3mimgdisplay"
-    
+
     else
         err "Image: w3m-img wasn't found on your system"
     fi
@@ -3576,7 +3576,7 @@ get_user_config() {
         config_file="${XDG_CONFIG_HOME}/neoneofetch/config"
 
     elif [[ -f "/etc/neoneofetch/config" ]]; then
-        cp "/usr/share/neoneofetch/config" "${XDG_CONFIG_HOME}/neoneofetch"
+        cp "/etc/neoneofetch/config" "${XDG_CONFIG_HOME}/neoneofetch"
         config_file="${XDG_CONFIG_HOME}/neoneofetch/config"
 
     elif [[ -f "/usr/local/etc/neoneofetch/config" ]]; then
