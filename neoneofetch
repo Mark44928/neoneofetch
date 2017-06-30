@@ -3641,7 +3641,7 @@ get_user_config() {
         config_file="${XDG_CONFIG_HOME}/neoneofetch/config.conf"
 
     elif [[ -f "/etc/neoneofetch/config.conf" ]]; then
-        cp "/etc/neoneofetch/config.conf" "${XDG_CONFIG_HOME}/neoneofetch.conf"
+        cp "/etc/neoneofetch/config.conf" "${XDG_CONFIG_HOME}/neoneofetch"
         config_file="${XDG_CONFIG_HOME}/neoneofetch/config.conf"
 
     elif [[ -f "/usr/local/etc/neoneofetch/config.conf" ]]; then
