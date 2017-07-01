@@ -32,6 +32,6 @@ sed -i -e "s|CONFDIR|${PREFIX}${CONFDIR}|g" neoneofetch
 sed -i -e "s|ASCIIDIR|${PREFIX}${ASCIIDIR}|g" neoneofetch
 
 cp -p neoneofetch "${DESTDIR}""${PREFIX}""${BINDIR}"
-cp -p config/config "${DESTDIR}""${PREFIX}""${CONFDIR}"
+cp -p config/config.conf "${DESTDIR}""${PREFIX}""${CONFDIR}"
 cp -p ascii/distro/* "${DESTDIR}""${PREFIX}""${ASCIIDIR}"
 cp -p neoneofetch.1 "${DESTDIR}""${PREFIX}""${MANDIR}"
