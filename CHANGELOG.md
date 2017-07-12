@@ -22,6 +22,10 @@
 
 - [SSH] Fixed infinite loop if neoneofetch is run on non-interactive shells.
 
+**Theme**
+
+- [Qt/KDE] Fixed inaccurate theme naming.
+
 
 ## Images
 
