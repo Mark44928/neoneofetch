@@ -4764,8 +4764,9 @@ main() {
     # Take a screenshot.
     [[ "$scrot" == "on" ]] && take_scrot
 
-    # Add neoneofetch command to verbose output.
+    # Add neoneofetch info to verbose output.
     err "Neoneofetch command: $0 $*"
+    err "Neoneofetch version: $version"
 
     # Show error messages.
     [[ "$verbose" == "on" ]] && printf "%b" "$err" >&2
