@@ -4767,6 +4767,7 @@ main() {
     # Add neoneofetch info to verbose output.
     err "Neoneofetch command: $0 $*"
     err "Neoneofetch version: $version"
+    err "Neoneofetch config:  $config_version"
 
     # Show error messages.
     [[ "$verbose" == "on" ]] && printf "%b" "$err" >&2
