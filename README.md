@@ -21,7 +21,8 @@ For more information:
 
 **https://github.com/dylanaraps/neoneofetch/wiki**
 
-![neoneofetch screenshot](https://u.teknik.io/KlBsD.png)
+<img src="https://i.imgur.com/lUrkQBN.png" alt="neoneofetch" align="right" width="420px">
+<img src="https://i.imgur.com/GFmC5Ad.png" alt="neoneofetch" width="420px">
 
 
 ## Dependencies
