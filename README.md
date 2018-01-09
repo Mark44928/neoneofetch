@@ -95,3 +95,6 @@ Donations will allow me to spend more time working on `neoneofetch`.
 If you like `neoneofetch` and want to give back in some way you can donate here:
 
 **https://patreon.com/dyla**
+
+
+<sup><sub>hey rtexel</sub></sup>
