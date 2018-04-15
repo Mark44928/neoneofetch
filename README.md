@@ -1,7 +1,7 @@
 # Neoneofetch
 
 <a href="https://repology.org/metapackage/neoneofetch">
-    <img src="https://repology.org/badge/vertical-allrepos/neoneofetch.svg" alt="Packaging status" align="right" height="400px">
+    <img src="https://repology.org/badge/vertical-allrepos/neoneofetch.svg" alt="Packaging status" align="right" width="150px">
 </a>
 
 [![Build Status](https://travis-ci.org/dylanaraps/neoneofetch.svg?branch=master)](https://travis-ci.org/dylanaraps/neoneofetch)
@@ -22,8 +22,8 @@ Neoneofetch supports almost 150 different operating systems. From Linux to Windo
 For more information: \[[**Dependencies**](https://github.com/dylanaraps/neoneofetch/wiki/Dependencies)\] \[[**Installation**](https://github.com/dylanaraps/neoneofetch/wiki/Installation)\] \[[**Wiki**](https://github.com/dylanaraps/neoneofetch/wiki)\]
 
 
-<img src="https://i.imgur.com/lUrkQBN.png" alt="neoneofetch" align="right" width="434px">
-<img src="https://i.imgur.com/GFmC5Ad.png" alt="neoneofetch" width="434px">
+<img src="https://i.imgur.com/lUrkQBN.png" alt="neoneofetch" align="right" width="349px">
+<img src="https://i.imgur.com/GFmC5Ad.png" alt="neoneofetch" width="349px">
 
 
 ## Articles
