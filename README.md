@@ -5,6 +5,7 @@
 </a>
 
 [![Build Status](https://travis-ci.org/dylanaraps/neoneofetch.svg?branch=master)](https://travis-ci.org/dylanaraps/neoneofetch)
+[![GitHub last commit](https://img.shields.io/github/last-commit/google/skia.svg)](https://github.com/dylanaraps/neoneofetch)
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE.md)
 [![Latest release](https://img.shields.io/github/release/dylanaraps/neoneofetch.svg)](https://github.com/dylanaraps/neoneofetch/releases)
 [![Donate](https://img.shields.io/badge/donate-patreon-yellow.svg)](https://www.patreon.com/dyla)
