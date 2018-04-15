@@ -21,7 +21,7 @@ For more information:
 
 \[[**Dependencies**](https://github.com/dylanaraps/neoneofetch/wiki/Dependencies)\] \[[**Installation**](https://github.com/dylanaraps/neoneofetch/wiki/Installation)\] \[[**Wiki**](https://github.com/dylanaraps/neoneofetch/wiki)\]
 
-<br>
+<br><br>
 
 
 <img src="https://i.imgur.com/lUrkQBN.png" alt="neoneofetch" align="right" width="434px">
