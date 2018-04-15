@@ -19,7 +19,7 @@ Neoneofetch supports almost 150 different operating systems. From Linux to Windo
 
 For more information:
 
-[[Dependencies(https://github.com/dylanaraps/neoneofetch/wiki/Dependencies)] [[Installation(https://github.com/dylanaraps/neoneofetch/wiki/Installation)] [[Wiki](https://github.com/dylanaraps/neoneofetch/wiki)]
+\[[Dependencies](https://github.com/dylanaraps/neoneofetch/wiki/Dependencies)\] \[[Installation(https://github.com/dylanaraps/neoneofetch/wiki/Installation)\] \[[Wiki](https://github.com/dylanaraps/neoneofetch/wiki)\]
 
 
 <img src="https://i.imgur.com/lUrkQBN.png" alt="neoneofetch" align="right" width="434px">
