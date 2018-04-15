@@ -26,7 +26,7 @@ For more information: \[[**Dependencies**](https://github.com/dylanaraps/neoneof
 <img src="https://i.imgur.com/GFmC5Ad.png" alt="neoneofetch" width="434px">
 
 
-## In the press
+## Articles
 
 - https://www.omgubuntu.co.uk/2016/11/neoneofetch-terminal-system-info-app
 - https://www.omgubuntu.co.uk/2017/01/neoneofetch-3-0-released
