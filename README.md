@@ -1,7 +1,7 @@
 # Neoneofetch
 
 <a href="https://repology.org/metapackage/neoneofetch">
-    <img src="https://repology.org/badge/vertical-allrepos/neoneofetch.svg" alt="Packaging status" align="right" width="150px">
+    <img src="https://repology.org/badge/vertical-allrepos/neoneofetch.svg" alt="Packaging status" align="right" width="150px" height="727px">
 </a>
 
 [![Build Status](https://travis-ci.org/dylanaraps/neoneofetch.svg?branch=master)](https://travis-ci.org/dylanaraps/neoneofetch)
@@ -18,14 +18,12 @@ The information by default is displayed alongside your operating system's logo. 
 
 You can further configure Neoneofetch to display exactly what you want it to. Through the use of command-line flags and the configuration file you can change existing information outputs or add your own custom ones.
 
-Neoneofetch supports almost 150 different operating systems. From Linux to Windows, all the way to more obscure operating systems like Minix, AIX and Haiku. If your favourite operating system is unsupported: Open up an issue and support will be added.
+Neoneofetch supports almost 150 different operating systems. From Linux to Windows, all the way to more obscure operating systems like Minix, AIX and Haiku. If your favourite operating system is unsupported: Open up an issue and support will be added.<br>
 
 ### For more information: \[[Dependencies](https://github.com/dylanaraps/neoneofetch/wiki/Dependencies)\] \[[Installation](https://github.com/dylanaraps/neoneofetch/wiki/Installation)\] \[[Wiki](https://github.com/dylanaraps/neoneofetch/wiki)\]
 
-
 <img src="https://i.imgur.com/lUrkQBN.png" alt="neoneofetch" align="right" width="349px">
 <img src="https://i.imgur.com/GFmC5Ad.png" alt="neoneofetch" width="349px">
-
 
 ## Articles
 
