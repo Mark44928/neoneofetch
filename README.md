@@ -9,64 +9,21 @@
 [![Latest release](https://img.shields.io/github/release/dylanaraps/neoneofetch.svg)](https://github.com/dylanaraps/neoneofetch/releases)
 [![Donate](https://img.shields.io/badge/donate-patreon-yellow.svg)](https://www.patreon.com/dyla)
 
+Neoneofetch is a command-line system information tool written in `bash 3.2+`. Neoneofetch displays information about your operating system, software and hardware in an aesthetic and visually pleasing way.
 
-Neoneofetch is a CLI system information tool written in BASH. Neoneofetch displays information about your system next to an image, your OS logo, or any ASCII file of your choice. The main purpose of Neoneofetch is to be used in screenshots to show other users what OS/Distro you're running, what Theme/Icons you're using etc.
+The information by default is displayed alongside your operating system's logo. You can further configure Neoneofetch to instead use an image, a custom ASCII file, your wallpaper or nothing at all.
 
-Neoneofetch is highly customizable through the use of command line flags or the user config file. There are over 50 config options to mess around with and there's the `print_info()` function and friends which let you add your own custom info.
+You can further configure Neoneofetch to display exactly what you want it to. Through the use of command-line flags and the configuration file you can change existing information outputs or add your own custom ones.
 
-Neoneofetch can be used on any OS that has BASH 3.2+, it's just a matter of adding support. If your OS/Distro isn't in the list below, feel free to open an issue on the repo and I'll gladly add support. Neoneofetch currently supports `Linux`, `MacOS`, `iOS`, `BSD`, `Solaris`, `Android`, `Haiku`, `GNU Hurd`, `MINIX`, `AIX`, `IRIX`, `FreeMint`, and `Windows (Cygwin/MSYS2/MinGW/Windows 10 Linux subsystem)`.
+Neoneofetch supports almost 150 different operating systems. From Linux to Windows, all the way to more obscure operating systems like Minix, AIX and Haiku. If your favourite operating system is unsupported: Open up an issue and support will be added.
 
 For more information:
 
-**https://github.com/dylanaraps/neoneofetch/wiki**
+[\[Dependencies\](https://github.com/dylanaraps/neoneofetch/wiki/Dependencies) [\[Installation\](https://github.com/dylanaraps/neoneofetch/wiki/Installation) [\[Wiki\](https://github.com/dylanaraps/neoneofetch/wiki)
+
 
 <img src="https://i.imgur.com/lUrkQBN.png" alt="neoneofetch" align="right" width="434px">
 <img src="https://i.imgur.com/GFmC5Ad.png" alt="neoneofetch" width="434px">
-
-
-## Dependencies
-
-https://github.com/dylanaraps/neoneofetch/wiki/Dependencies
-
-
-## Installation
-
-https://github.com/dylanaraps/neoneofetch/wiki/Installation
-
-
-## Post Install
-
-
-### Using the config file
-
-Neoneofetch will by default create a config file at `$HOME/.config/neoneofetch/config` and this file contains all of the script's options/settings. The config file allows you to keep your customizations between script versions and allows you to easily share your customizations with other people.
-
-You can launch the script without a config file by using the flag `--config none` and you can specify a custom config location using `--config path/to/config`.
-
-See this wiki page for the default config: https://github.com/dylanaraps/neoneofetch/wiki/Config-File
-
-
-### Customizing what info gets displayed
-
-https://github.com/dylanaraps/neoneofetch/wiki/Customizing-Info
-
-
-### Customizing the script using a custom alias
-
-If you don't want to use the config file you can customize almost everything using launch flags.
-
-Here's an example neoneofetch alias:
-
-```sh
-alias neoneofetch2="neoneofetch \
---config off \
---block_range 1 8 \
---bold off \
---uptime_shorthand on \
---gtk_shorthand on \
---colors 4 1 8 8 8 7 \
-"
-```
 
 
 ## Thanks
@@ -86,7 +43,6 @@ Thanks to:
     - Tiny ASCII logos
 
 
-
 ## Donate
 
 Donations will allow me to spend more time working on `neoneofetch`.
@@ -94,6 +50,3 @@ Donations will allow me to spend more time working on `neoneofetch`.
 If you like `neoneofetch` and want to give back in some way you can donate here:
 
 **https://patreon.com/dyla**
-
-
-<sup><sub>hey rtexel</sub></sup>
