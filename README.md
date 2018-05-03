@@ -40,6 +40,7 @@ Neoneofetch supports almost 150 different operating systems. From Linux to Windo
 - https://www.ostechnix.com/neoneofetch-display-linux-systems-information/
 - https://www.techrepublic.com/article/how-to-get-all-the-information-you-need-about-your-linux-machine-with-a-single-command/
 - https://www.tecmint.com/neoneofetch-shows-linux-system-information-with-logo/
+- https://www.youtube.com/watch?v=bgepGW858fc
 
 
 ## Thanks
