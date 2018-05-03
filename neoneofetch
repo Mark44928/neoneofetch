@@ -50,7 +50,6 @@ shopt -s nocasematch
 reset="\e[0m"
 
 # Neoneofetch default config.
-
 read -rd '' config <<'EOF'
 # See this wiki page for more info:
 # https://github.com/dylanaraps/neoneofetch/wiki/Customizing-Info
