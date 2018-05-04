@@ -1,3 +1,18 @@
+This release bumps the version number up to `4.0.0` as it contains major
+changes to how Neoneofetch is packaged and installed.
+
+The entirety of Neoneofetch is now contained within a single executable.
+Everything has been in-lined. Installing Neoneofetch is now as easy as
+downloading the script and running it.
+
+Packaging Neoneofetch is now easier as well. We were using `sed` in the
+`Makefile` to replace specific paths and we have had to work around
+different system hierarchies. None of this is necessary anymore.
+
+Those using distributions with an outdated Neoneofetch version in their repos
+can now easily install the latest version.
+
+
 ## Contributors
 
 <!-- - [**@**](https://github.com/) -->
@@ -18,6 +33,7 @@
 
 ## General
 
+- Neoneofetch is now a single executable.
 - Simplified `--version` output.
 - Fixed theme issues by setting `GIO_EXTRA_MODULES`.
 
