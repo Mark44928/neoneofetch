@@ -1,14 +1,16 @@
-# Neoneofetch
-
 <a href="https://repology.org/metapackage/neoneofetch">
-    <img src="https://repology.org/badge/vertical-allrepos/neoneofetch.svg" alt="Packaging status" align="right" width="150px" height="730px">
+    <img src="https://repology.org/badge/vertical-allrepos/neoneofetch.svg" alt="Packaging status" align="right" width="125px" height="630px">
 </a>
 
-[![Discord](https://img.shields.io/discord/440354555197128704.svg)](https://discord.gg/BtnTPFF)
-[![Build Status](https://travis-ci.org/dylanaraps/neoneofetch.svg?branch=master)](https://travis-ci.org/dylanaraps/neoneofetch)
-[![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE.md)
-[![Latest release](https://img.shields.io/github/release/dylanaraps/neoneofetch.svg)](https://github.com/dylanaraps/neoneofetch/releases)
-[![Donate](https://img.shields.io/badge/donate-patreon-yellow.svg)](https://www.patreon.com/dyla)
+<h1 align="center"><img src="https://i.imgur.com/JFxwJtU.png" alt="logo" height="50px"></h1>
+
+<p align="center">
+<a href="https://discord.gg/BtnTPFF"><img src="https://img.shields.io/discord/440354555197128704.svg"></a>
+<a href="https://travis-ci.org/dylanaraps/neoneofetch"><img src="https://travis-ci.org/dylanaraps/neoneofetch.svg?branch=master"></a>
+<a href="./LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
+<a href="https://github.com/dylanaraps/neoneofetch/releases"><img src="https://img.shields.io/github/release/dylanaraps/neoneofetch.svg"></a>
+<a href="https://www.patreon.com/dyla"><img src="https://img.shields.io/badge/donate-patreon-yellow.svg"></a>
+</p>
 
 Neoneofetch is a command-line system information tool written in `bash 3.2+`. Neoneofetch displays information about your operating system, software and hardware in an aesthetic and visually pleasing way.
 
@@ -22,9 +24,6 @@ Neoneofetch supports almost 150 different operating systems. From Linux to Windo
 
 
 ### For more information: \[[Dependencies](https://github.com/dylanaraps/neoneofetch/wiki/Dependencies)\] \[[Installation](https://github.com/dylanaraps/neoneofetch/wiki/Installation)\] \[[Wiki](https://github.com/dylanaraps/neoneofetch/wiki)\]
-
-<img src="https://i.imgur.com/lUrkQBN.png" alt="neoneofetch" align="right" width="349px">
-<img src="https://i.imgur.com/GFmC5Ad.png" alt="neoneofetch" width="349px">
 
 ## Articles
 
