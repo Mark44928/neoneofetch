@@ -1,7 +1,3 @@
-<a href="https://repology.org/metapackage/neoneofetch">
-    <img src="https://repology.org/badge/vertical-allrepos/neoneofetch.svg" alt="Packaging status" align="right" width="125px" height="630px">
-</a>
-
 <h1 align="center"><img src="https://i.imgur.com/JFxwJtU.png" alt="logo" height="50px"></h1>
 
 <p align="center">
@@ -11,6 +7,10 @@
 <a href="https://github.com/dylanaraps/neoneofetch/releases"><img src="https://img.shields.io/github/release/dylanaraps/neoneofetch.svg"></a>
 <a href="https://www.patreon.com/dyla"><img src="https://img.shields.io/badge/donate-patreon-yellow.svg"></a>
 </p>
+
+<a href="https://repology.org/metapackage/neoneofetch">
+    <img src="https://repology.org/badge/vertical-allrepos/neoneofetch.svg" alt="Packaging status" align="right" width="150px" height="700px">
+</a>
 
 Neoneofetch is a command-line system information tool written in `bash 3.2+`. Neoneofetch displays information about your operating system, software and hardware in an aesthetic and visually pleasing way.
 
@@ -22,6 +22,8 @@ You can further configure Neoneofetch to display exactly what you want it to. Th
 
 Neoneofetch supports almost 150 different operating systems. From Linux to Windows, all the way to more obscure operating systems like Minix, AIX and Haiku. If your favourite operating system is unsupported: Open up an issue and support will be added.<br>
 
+<img src="https://i.imgur.com/lUrkQBN.png" alt="neoneofetch" align="right" width="349px">
+<img src="https://i.imgur.com/GFmC5Ad.png" alt="neoneofetch" width="349px">
 
 ### For more information: \[[Dependencies](https://github.com/dylanaraps/neoneofetch/wiki/Dependencies)\] \[[Installation](https://github.com/dylanaraps/neoneofetch/wiki/Installation)\] \[[Wiki](https://github.com/dylanaraps/neoneofetch/wiki)\]
 
