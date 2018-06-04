@@ -7,6 +7,7 @@
 <a href="./LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
 <a href="https://github.com/dylanaraps/neoneofetch/releases"><img src="https://img.shields.io/github/release/dylanaraps/neoneofetch.svg"></a>
 <a href="https://www.patreon.com/dyla"><img src="https://img.shields.io/badge/donate-patreon-yellow.svg"></a>
+<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=V7QNJNKS3WYVS"><img src="https://img.shields.io/badge/donate-paypal-green.svg"></a>
 </p>
 
 <img src="https://i.imgur.com/GFmC5Ad.png" alt="neoneofetch" align="right" height="240px">
@@ -55,6 +56,7 @@ Neoneofetch supports almost 150 different operating systems. From Linux to Windo
 
 ## Donate
 
-Donations will allow me to spend more time working on `neoneofetch`.
+Donations allow me to spend more time working on `neoneofetch` and my other Open Source projects. If you like `neoneofetch` and want to give back in some way you can donate at the links below.
 
-If you like `neoneofetch` and want to give back in some way you can donate here: **https://patreon.com/dyla**
+<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=V7QNJNKS3WYVS"><img src="https://img.shields.io/badge/donate-paypal-green.svg"></a> <a href="https://www.patreon.com/dyla"><img src="https://img.shields.io/badge/donate-patreon-yellow.svg"></a>
+
