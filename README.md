@@ -6,8 +6,8 @@
 <a href="https://travis-ci.org/dylanaraps/neoneofetch"><img src="https://travis-ci.org/dylanaraps/neoneofetch.svg?branch=master"></a>
 <a href="./LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
 <a href="https://github.com/dylanaraps/neoneofetch/releases"><img src="https://img.shields.io/github/release/dylanaraps/neoneofetch.svg"></a>
-<a href="https://www.patreon.com/dyla"><img src="https://img.shields.io/badge/donate-patreon-yellow.svg"></a>
-<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=V7QNJNKS3WYVS"><img src="https://img.shields.io/badge/donate-paypal-green.svg"></a>
+<a href="https://repology.org/metapackage/neoneofetch"><img src="https://repology.org/badge/tiny-repos/neoneofetch.svg" alt="Packaging status"></a>
+<a href="#donate"><img src="https://img.shields.io/badge/donate-donate-yellow.svg"></a>
 </p>
 
 <img src="https://i.imgur.com/GFmC5Ad.png" alt="neoneofetch" align="right" height="240px">
