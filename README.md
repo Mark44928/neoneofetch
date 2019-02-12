@@ -7,7 +7,6 @@
 <a href="./LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
 <a href="https://github.com/dylanaraps/neoneofetch/releases"><img src="https://img.shields.io/github/release/dylanaraps/neoneofetch.svg"></a>
 <a href="https://repology.org/metapackage/neoneofetch"><img src="https://repology.org/badge/tiny-repos/neoneofetch.svg" alt="Packaging status"></a>
-<a href="#donate"><img src="https://img.shields.io/badge/donate-donate-yellow.svg"></a>
 </p>
 
 <img src="https://i.imgur.com/GFmC5Ad.png" alt="neoneofetch" align="right" height="240px">
