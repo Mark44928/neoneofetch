@@ -3,7 +3,6 @@
 
 <p align="center">
 <a href="https://discord.gg/BtnTPFF"><img src="https://img.shields.io/discord/440354555197128704.svg"></a>
-<a href="https://travis-ci.org/dylanaraps/neoneofetch"><img src="https://travis-ci.org/dylanaraps/neoneofetch.svg?branch=master"></a>
 <a href="./LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
 <a href="https://github.com/dylanaraps/neoneofetch/releases"><img src="https://img.shields.io/github/release/dylanaraps/neoneofetch.svg"></a>
 <a href="https://repology.org/metapackage/neoneofetch"><img src="https://repology.org/badge/tiny-repos/neoneofetch.svg" alt="Packaging status"></a>
