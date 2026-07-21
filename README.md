@@ -46,10 +46,9 @@ bash install.sh
 | Feature | neofetch | neoneofetch |
 |---|---|---|
 | Title prefix | None | `◇` diamond |
-| Title underline | `━` thick rule | `━` colored accent |
+| Title underline | None | `━` colored accent |
 | Info labels | `Label: value` | `Label → value` aligned |
 | Separator | `:` or custom | `→` arrow |
-| Progress bars | `▱`/`▰` | `░`/`▓` |
 | Termux | Not supported | Built-in |
 | JSON output | Broken commas | Valid RFC 8259 |
 | Package detection | Single backend | `pkg`, `dpkg`, `apt` |
