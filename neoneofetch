@@ -1,10 +1,14 @@
-#!/usr/bin/env bash
+#!/data/data/com.termux/files/usr/bin/bash
 # vim: noai:ts=4:sw=4:expandtab
+
+# Termux bootstrap: re-exec with bash if needed
+[[ -z "$BASH_VERSION" && -f /data/data/com.termux/files/usr/bin/bash ]] && \
+    exec /data/data/com.termux/files/usr/bin/bash "$0" "$@"
 # shellcheck source=/dev/null
 # shellcheck disable=2009
 #
 # Neoneofetch: A command-line system information tool written in bash 3.2+.
-# https://github.com/dylanaraps/neoneofetch
+# https://github.com/Mark44928/neoneofetch
 #
 # The MIT License (MIT)
 #
@@ -33,7 +37,7 @@ version=7.1.0
 # Fallback to a value of '5' for shells which support bash
 # but do not set the 'BASH_' shell variables (osh).
 bash_version=${BASH_VERSINFO[0]:-5}
-shopt -s eval_unsafe_arith &>/dev/null
+
 
 sys_locale=${LANG:-C}
 XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-${HOME}/.config}
@@ -43,33 +47,34 @@ shopt -s nocasematch
 
 # Speed up script by not using unicode.
 LC_ALL=C
-LANG=C
 
 # Fix issues with gsettings.
-export GIO_EXTRA_MODULES=/usr/lib/x86_64-linux-gnu/gio/modules/
+case "$(uname -m)" in
+    x86_64)  [[ -d /usr/lib/x86_64-linux-gnu/gio/modules ]] && \
+                 export GIO_EXTRA_MODULES=/usr/lib/x86_64-linux-gnu/gio/modules/ ;;
+    aarch64) [[ -d /usr/lib/aarch64-linux-gnu/gio/modules ]] && \
+                 export GIO_EXTRA_MODULES=/usr/lib/aarch64-linux-gnu/gio/modules/ ;;
+    armv7l|arm) [[ -d /usr/lib/arm-linux-gnueabihf/gio/modules ]] && \
+                    export GIO_EXTRA_MODULES=/usr/lib/arm-linux-gnueabihf/gio/modules/ ;;
+esac
 
 # Neoneofetch default config.
 read -rd '' config <<'EOF'
 # See this wiki page for more info:
-# https://github.com/dylanaraps/neoneofetch/wiki/Customizing-Info
+# https://github.com/Mark44928/neoneofetch/wiki/Customizing-Info
 print_info() {
     info title
-    info underline
+    info topborder
 
     info "OS" distro
     info "Host" model
     info "Kernel" kernel
     info "Uptime" uptime
-    info "Packages" packages
     info "Shell" shell
-    info "Resolution" resolution
+    info "Packages" packages
     info "DE" de
     info "WM" wm
-    info "WM Theme" wm_theme
-    info "Theme" theme
-    info "Icons" icons
     info "Terminal" term
-    info "Terminal Font" term_font
     info "CPU" cpu
     info "GPU" gpu
     info "Memory" memory
@@ -82,9 +87,15 @@ print_info() {
     # [[ "$player" ]] && prin "Music Player" "$player"
     # info "Local IP" local_ip
     # info "Public IP" public_ip
+    # info "Resolution" resolution
+    # info "WM Theme" wm_theme
+    # info "Theme" theme
+    # info "Icons" icons
+    # info "Terminal Font" term_font
     # info "Users" users
     # info "Locale" locale  # This only works on glibc systems.
 
+    info bottomborder
     info cols
 }
 
@@ -187,8 +198,8 @@ memory_unit="mib"
 
 # Show/Hide Package Manager names.
 #
-# Default: 'tiny'
-# Values:  'on', 'tiny' 'off'
+# Default: 'on'
+# Values:  'on', 'tiny', 'off'
 # Flag:    --package_managers
 #
 # Example:
@@ -608,22 +619,22 @@ underline_enabled="on"
 
 # Underline character
 #
-# Default:  '-'
+# Default:  '─'
 # Values:   'string'
 # Flag:     --underline_char
-underline_char="-"
+underline_char="━"
 
 
 # Info Separator
 # Replace the default separator with the specified string.
 #
-# Default:  ':'
+# Default:  '│'
 # Flag:     --separator
 #
 # Example:
 # separator="->":   'Shell-> bash'
 # separator=" =":   'WM = dwm'
-separator=":"
+separator=" →"
 
 
 # Color Blocks
@@ -685,15 +696,15 @@ col_offset="auto"
 
 # Bar characters
 #
-# Default:  '-', '='
+# Default:  '▱', '▰'
 # Values:   'string', 'string'
 # Flag:     --bar_char
 #
 # Example:
 # neoneofetch --bar_char 'elapsed' 'total'
 # neoneofetch --bar_char '-' '='
-bar_char_elapsed="-"
-bar_char_total="="
+bar_char_elapsed="░"
+bar_char_total="▓"
 
 # Toggle Bar border
 #
@@ -867,7 +878,7 @@ thumbnail_dir="${XDG_CACHE_HOME:-${HOME}/.cache}/thumbnails/neoneofetch"
 # Flag:     --crop_mode
 #
 # See this wiki page to learn about the fit and fill options.
-# https://github.com/dylanaraps/neoneofetch/wiki/What-is-Waifu-Crop%3F
+# https://github.com/Mark44928/neoneofetch/wiki/What-is-Waifu-Crop%3F
 crop_mode="normal"
 
 # Crop offset
@@ -1112,13 +1123,14 @@ get_distro() {
                 esac
 
             elif [[ $(< /proc/version) == *chrome-bot* || -f /dev/cros_ec ]]; then
-                [[ $distro != *Chrome* ]] &&
+                [[ $distro != *Chrome* ]] && {
                     case $distro_shorthand in
                         on)   distro+=" [Chrome OS]" ;;
                         tiny) distro="Chrome OS" ;;
                         *)    distro+=" on Chrome OS" ;;
                     esac
                     distro=${distro## on }
+                }
             fi
 
             distro=$(trim_quotes "$distro")
@@ -1152,9 +1164,11 @@ get_distro() {
                 10.13*) codename="macOS High Sierra" ;;
                 10.14*) codename="macOS Mojave" ;;
                 10.15*) codename="macOS Catalina" ;;
-                10.16*) codename="macOS Big Sur" ;;
                 11.*)  codename="macOS Big Sur" ;;
                 12.*)  codename="macOS Monterey" ;;
+                13.*)  codename="macOS Ventura" ;;
+                14.*)  codename="macOS Sonoma" ;;
+                15.*)  codename="macOS Sequoia" ;;
                 *)      codename=macOS ;;
             esac
 
@@ -1266,72 +1280,70 @@ get_model() {
 
         "iPhone OS")
             case $kernel_machine in
-                iPad1,1):            "iPad" ;;
-                iPad2,[1-4]):        "iPad 2" ;;
-                iPad3,[1-3]):        "iPad 3" ;;
-                iPad3,[4-6]):        "iPad 4" ;;
-                iPad6,1[12]):        "iPad 5" ;;
-                iPad7,[5-6]):        "iPad 6" ;;
-                iPad7,1[12]):        "iPad 7" ;;
-                iPad11,[67]):        "iPad 8" ;;
-                iPad4,[1-3]):        "iPad Air" ;;
-                iPad5,[3-4]):        "iPad Air 2" ;;
-                iPad11,[3-4]):       "iPad Air 3" ;;
-                iPad13,[1-2]):       "iPad Air 4";;
-                iPad6,[7-8]):        "iPad Pro (12.9 Inch)" ;;
-                iPad6,[3-4]):        "iPad Pro (9.7 Inch)" ;;
-                iPad7,[1-2]):        "iPad Pro 2 (12.9 Inch)" ;;
-                iPad7,[3-4]):        "iPad Pro (10.5 Inch)" ;;
-                iPad8,[1-4]):        "iPad Pro (11 Inch)" ;;
-                iPad8,[5-8]):        "iPad Pro 3 (12.9 Inch)" ;;
-                iPad8,9 | iPad8,10): "iPad Pro 4 (11 Inch)" ;;
-                iPad8,1[1-2]):       "iPad Pro 4 (12.9 Inch)" ;;
-                iPad2,[5-7]):        "iPad mini" ;;
-                iPad4,[4-6]):        "iPad mini 2" ;;
-                iPad4,[7-9]):        "iPad mini 3" ;;
-                iPad5,[1-2]):        "iPad mini 4" ;;
-                iPad11,[1-2]):       "iPad mini 5" ;;
+                iPad1,1)           model="iPad" ;;
+                iPad2,[1-4])       model="iPad 2" ;;
+                iPad3,[1-3])       model="iPad 3" ;;
+                iPad3,[4-6])       model="iPad 4" ;;
+                iPad6,1[12])       model="iPad 5" ;;
+                iPad7,[5-6])       model="iPad 6" ;;
+                iPad7,1[12])       model="iPad 7" ;;
+                iPad11,[67])       model="iPad 8" ;;
+                iPad4,[1-3])       model="iPad Air" ;;
+                iPad5,[3-4])       model="iPad Air 2" ;;
+                iPad11,[3-4])      model="iPad Air 3" ;;
+                iPad13,[1-2])      model="iPad Air 4" ;;
+                iPad6,[7-8])       model="iPad Pro (12.9 Inch)" ;;
+                iPad6,[3-4])       model="iPad Pro (9.7 Inch)" ;;
+                iPad7,[1-2])       model="iPad Pro 2 (12.9 Inch)" ;;
+                iPad7,[3-4])       model="iPad Pro (10.5 Inch)" ;;
+                iPad8,[1-4])       model="iPad Pro (11 Inch)" ;;
+                iPad8,[5-8])       model="iPad Pro 3 (12.9 Inch)" ;;
+                iPad8,9 | iPad8,10) model="iPad Pro 4 (11 Inch)" ;;
+                iPad8,1[1-2])      model="iPad Pro 4 (12.9 Inch)" ;;
+                iPad2,[5-7])       model="iPad mini" ;;
+                iPad4,[4-6])       model="iPad mini 2" ;;
+                iPad4,[7-9])       model="iPad mini 3" ;;
+                iPad5,[1-2])       model="iPad mini 4" ;;
+                iPad11,[1-2])      model="iPad mini 5" ;;
 
-                iPhone1,1):     "iPhone" ;;
-                iPhone1,2):     "iPhone 3G" ;;
-                iPhone2,1):     "iPhone 3GS" ;;
-                iPhone3,[1-3]): "iPhone 4" ;;
-                iPhone4,1):     "iPhone 4S" ;;
-                iPhone5,[1-2]): "iPhone 5" ;;
-                iPhone5,[3-4]): "iPhone 5c" ;;
-                iPhone6,[1-2]): "iPhone 5s" ;;
-                iPhone7,2):     "iPhone 6" ;;
-                iPhone7,1):     "iPhone 6 Plus" ;;
-                iPhone8,1):     "iPhone 6s" ;;
-                iPhone8,2):     "iPhone 6s Plus" ;;
-                iPhone8,4):     "iPhone SE" ;;
-                iPhone9,[13]):  "iPhone 7" ;;
-                iPhone9,[24]):  "iPhone 7 Plus" ;;
-                iPhone10,[14]): "iPhone 8" ;;
-                iPhone10,[25]): "iPhone 8 Plus" ;;
-                iPhone10,[36]): "iPhone X" ;;
-                iPhone11,2):    "iPhone XS" ;;
-                iPhone11,[46]): "iPhone XS Max" ;;
-                iPhone11,8):    "iPhone XR" ;;
-                iPhone12,1):    "iPhone 11" ;;
-                iPhone12,3):    "iPhone 11 Pro" ;;
-                iPhone12,5):    "iPhone 11 Pro Max" ;;
-                iPhone12,8):    "iPhone SE 2020" ;;
-                iPhone13,1):    "iPhone 12 Mini" ;;
-                iPhone13,2):    "iPhone 12" ;;
-                iPhone13,3):    "iPhone 12 Pro" ;;
-                iPhone13,4):    "iPhone 12 Pro Max" ;;
+                iPhone1,1)     model="iPhone" ;;
+                iPhone1,2)     model="iPhone 3G" ;;
+                iPhone2,1)     model="iPhone 3GS" ;;
+                iPhone3,[1-3]) model="iPhone 4" ;;
+                iPhone4,1)     model="iPhone 4S" ;;
+                iPhone5,[1-2]) model="iPhone 5" ;;
+                iPhone5,[3-4]) model="iPhone 5c" ;;
+                iPhone6,[1-2]) model="iPhone 5s" ;;
+                iPhone7,2)     model="iPhone 6" ;;
+                iPhone7,1)     model="iPhone 6 Plus" ;;
+                iPhone8,1)     model="iPhone 6s" ;;
+                iPhone8,2)     model="iPhone 6s Plus" ;;
+                iPhone8,4)     model="iPhone SE" ;;
+                iPhone9,[13])  model="iPhone 7" ;;
+                iPhone9,[24])  model="iPhone 7 Plus" ;;
+                iPhone10,[14]) model="iPhone 8" ;;
+                iPhone10,[25]) model="iPhone 8 Plus" ;;
+                iPhone10,[36]) model="iPhone X" ;;
+                iPhone11,2)    model="iPhone XS" ;;
+                iPhone11,[46]) model="iPhone XS Max" ;;
+                iPhone11,8)    model="iPhone XR" ;;
+                iPhone12,1)    model="iPhone 11" ;;
+                iPhone12,3)    model="iPhone 11 Pro" ;;
+                iPhone12,5)    model="iPhone 11 Pro Max" ;;
+                iPhone12,8)    model="iPhone SE 2020" ;;
+                iPhone13,1)    model="iPhone 12 Mini" ;;
+                iPhone13,2)    model="iPhone 12" ;;
+                iPhone13,3)    model="iPhone 12 Pro" ;;
+                iPhone13,4)    model="iPhone 12 Pro Max" ;;
 
-                iPod1,1): "iPod touch" ;;
-                ipod2,1): "iPod touch 2G" ;;
-                ipod3,1): "iPod touch 3G" ;;
-                ipod4,1): "iPod touch 4G" ;;
-                ipod5,1): "iPod touch 5G" ;;
-                ipod7,1): "iPod touch 6G" ;;
-                iPod9,1): "iPod touch 7G" ;;
+                iPod1,1) model="iPod touch" ;;
+                ipod2,1) model="iPod touch 2G" ;;
+                ipod3,1) model="iPod touch 3G" ;;
+                ipod4,1) model="iPod touch 4G" ;;
+                ipod5,1) model="iPod touch 5G" ;;
+                ipod7,1) model="iPod touch 6G" ;;
+                iPod9,1) model="iPod touch 7G" ;;
             esac
-
-            model=$_
         ;;
 
         BSD|MINIX)
@@ -1387,8 +1399,19 @@ get_title() {
         *)  hostname=${HOSTNAME:-$(hostname)} ;;
     esac
 
-    title=${title_color}${bold}${user}${at_color}@${title_color}${bold}${hostname}
-    length=$((${#user} + ${#hostname} + 1))
+    title="${title_color}${bold}◇ ${user}${at_color}@${title_color}${bold}${hostname}"
+    length=$((${#user} + ${#hostname} + 5))
+    border_length=$length
+
+    # Print title.
+    printf '%b\n' "${text_padding:+\e[${text_padding}C}${zws}${title}${reset} "
+
+    # Print underline accent.
+    printf -v _title_ul "%${length}s"
+    printf '%b\n' "${text_padding:+\e[${text_padding}C}${zws}${title_color}${_title_ul// /━}${reset} "
+
+    ((info_height+=2))
+    prin=1
 }
 
 get_kernel() {
@@ -1549,7 +1572,8 @@ get_packages() {
             has kiss       && tot kiss l
             has cpt-list   && tot cpt-list
             has pacman-key && tot pacman -Qq --color never
-            has dpkg       && tot dpkg-query -f '.\n' -W
+            [[ -d /data/data/com.termux ]] && { has pkg && tot pkg list-installed; dpkg_done=1; }
+            [[ -z "$dpkg_done" ]] && has dpkg && tot dpkg-query -f '.\n' -W
             has xbps-query && tot xbps-query -l
             has apk        && tot apk info
             has opkg       && tot opkg list-installed
@@ -1700,10 +1724,11 @@ get_packages() {
         packages=${packages%,*}
 
     elif [[ $package_managers == tiny ]]; then
-        packages+=" (${manager_string%,*})"
+        packages+=" (${manager_string%%, })"
     fi
 
     packages=${packages/pacman-key/pacman}
+    unset -f has dir pac tot nix-user-pkgs 2>/dev/null
 }
 
 get_shell() {
@@ -2293,40 +2318,39 @@ get_cpu() {
 
         "iPhone OS")
             case $kernel_machine in
-                "iPhone1,"[1-2] | "iPod1,1"): "Samsung S5L8900 (1) @ 412MHz" ;;
-                "iPhone2,1"):                 "Samsung S5PC100 (1) @ 600MHz" ;;
-                "iPhone3,"[1-3] | "iPod4,1"): "Apple A4 (1) @ 800MHz" ;;
-                "iPhone4,1" | "iPod5,1"):     "Apple A5 (2) @ 800MHz" ;;
-                "iPhone5,"[1-4]): "Apple A6 (2) @ 1.3GHz" ;;
-                "iPhone6,"[1-2]): "Apple A7 (2) @ 1.3GHz" ;;
-                "iPhone7,"[1-2]): "Apple A8 (2) @ 1.4GHz" ;;
-                "iPhone8,"[1-4] | "iPad6,1"[12]): "Apple A9 (2) @ 1.85GHz" ;;
-                "iPhone9,"[1-4] | "iPad7,"[5-6] | "iPad7,1"[1-2]):
-                    "Apple A10 Fusion (4) @ 2.34GHz"
+                "iPhone1,"[1-2] | "iPod1,1") cpu="Samsung S5L8900 (1) @ 412MHz" ;;
+                "iPhone2,1")                 cpu="Samsung S5PC100 (1) @ 600MHz" ;;
+                "iPhone3,"[1-3] | "iPod4,1") cpu="Apple A4 (1) @ 800MHz" ;;
+                "iPhone4,1" | "iPod5,1")     cpu="Apple A5 (2) @ 800MHz" ;;
+                "iPhone5,"[1-4]) cpu="Apple A6 (2) @ 1.3GHz" ;;
+                "iPhone6,"[1-2]) cpu="Apple A7 (2) @ 1.3GHz" ;;
+                "iPhone7,"[1-2]) cpu="Apple A8 (2) @ 1.4GHz" ;;
+                "iPhone8,"[1-4] | "iPad6,1"[12]) cpu="Apple A9 (2) @ 1.85GHz" ;;
+                "iPhone9,"[1-4] | "iPad7,"[5-6] | "iPad7,1"[1-2])
+                    cpu="Apple A10 Fusion (4) @ 2.34GHz"
                 ;;
-                "iPhone10,"[1-6]): "Apple A11 Bionic (6) @ 2.39GHz" ;;
-                "iPhone11,"[2468] | "iPad11,"[1-4] | "iPad11,"[6-7]): "Apple A12 Bionic (6) @ 2.49GHz" ;;
-                "iPhone12,"[1358]): "Apple A13 Bionic (6) @ 2.65GHz" ;;
-                "iPhone13,"[1-4] | "iPad13,"[1-2]): "Apple A14 Bionic (6) @ 3.00Ghz" ;;
+                "iPhone10,"[1-6]) cpu="Apple A11 Bionic (6) @ 2.39GHz" ;;
+                "iPhone11,"[2468] | "iPad11,"[1-4] | "iPad11,"[6-7]) cpu="Apple A12 Bionic (6) @ 2.49GHz" ;;
+                "iPhone12,"[1358]) cpu="Apple A13 Bionic (6) @ 2.65GHz" ;;
+                "iPhone13,"[1-4] | "iPad13,"[1-2]) cpu="Apple A14 Bionic (6) @ 3.00Ghz" ;;
 
-                "iPod2,1"): "Samsung S5L8720 (1) @ 533MHz" ;;
-                "iPod3,1"): "Samsung S5L8922 (1) @ 600MHz" ;;
-                "iPod7,1"): "Apple A8 (2) @ 1.1GHz" ;;
-                "iPad1,1"): "Apple A4 (1) @ 1GHz" ;;
-                "iPad2,"[1-7]): "Apple A5 (2) @ 1GHz" ;;
-                "iPad3,"[1-3]): "Apple A5X (2) @ 1GHz" ;;
-                "iPad3,"[4-6]): "Apple A6X (2) @ 1.4GHz" ;;
-                "iPad4,"[1-3]): "Apple A7 (2) @ 1.4GHz" ;;
-                "iPad4,"[4-9]): "Apple A7 (2) @ 1.4GHz" ;;
-                "iPad5,"[1-2]): "Apple A8 (2) @ 1.5GHz" ;;
-                "iPad5,"[3-4]): "Apple A8X (3) @ 1.5GHz" ;;
-                "iPad6,"[3-4]): "Apple A9X (2) @ 2.16GHz" ;;
-                "iPad6,"[7-8]): "Apple A9X (2) @ 2.26GHz" ;;
-                "iPad7,"[1-4]): "Apple A10X Fusion (6) @ 2.39GHz" ;;
-                "iPad8,"[1-8]): "Apple A12X Bionic (8) @ 2.49GHz" ;;
-                "iPad8,9" | "iPad8,1"[0-2]): "Apple A12Z Bionic (8) @ 2.49GHz" ;;
+                "iPod2,1") cpu="Samsung S5L8720 (1) @ 533MHz" ;;
+                "iPod3,1") cpu="Samsung S5L8922 (1) @ 600MHz" ;;
+                "iPod7,1") cpu="Apple A8 (2) @ 1.1GHz" ;;
+                "iPad1,1") cpu="Apple A4 (1) @ 1GHz" ;;
+                "iPad2,"[1-7]) cpu="Apple A5 (2) @ 1GHz" ;;
+                "iPad3,"[1-3]) cpu="Apple A5X (2) @ 1GHz" ;;
+                "iPad3,"[4-6]) cpu="Apple A6X (2) @ 1.4GHz" ;;
+                "iPad4,"[1-3]) cpu="Apple A7 (2) @ 1.4GHz" ;;
+                "iPad4,"[4-9]) cpu="Apple A7 (2) @ 1.4GHz" ;;
+                "iPad5,"[1-2]) cpu="Apple A8 (2) @ 1.5GHz" ;;
+                "iPad5,"[3-4]) cpu="Apple A8X (3) @ 1.5GHz" ;;
+                "iPad6,"[3-4]) cpu="Apple A9X (2) @ 2.16GHz" ;;
+                "iPad6,"[7-8]) cpu="Apple A9X (2) @ 2.26GHz" ;;
+                "iPad7,"[1-4]) cpu="Apple A10X Fusion (6) @ 2.39GHz" ;;
+                "iPad8,"[1-8]) cpu="Apple A12X Bionic (8) @ 2.49GHz" ;;
+                "iPad8,9" | "iPad8,1"[0-2]) cpu="Apple A12Z Bionic (8) @ 2.49GHz" ;;
             esac
-            cpu="$_"
         ;;
 
         "BSD")
@@ -2580,7 +2604,7 @@ get_gpu() {
                     gpu="${gpu/Intel }"
                 fi
 
-                prin "${subtitle:+${subtitle}${gpu_name}}" "$gpu"
+                prin "${subtitle:+${subtitle}${gpu_name:-}}" "$gpu"
             done
 
             return
@@ -2602,31 +2626,30 @@ get_gpu() {
 
         "iPhone OS")
             case $kernel_machine in
-                "iPhone1,"[1-2]):                             "PowerVR MBX Lite 3D" ;;
-                "iPhone2,1" | "iPhone3,"[1-3] | "iPod3,1" | "iPod4,1" | "iPad1,1"):
-                    "PowerVR SGX535"
+                "iPhone1,"[1-2])                             gpu="PowerVR MBX Lite 3D" ;;
+                "iPhone2,1" | "iPhone3,"[1-3] | "iPod3,1" | "iPod4,1" | "iPad1,1")
+                    gpu="PowerVR SGX535"
                 ;;
-                "iPhone4,1" | "iPad2,"[1-7] | "iPod5,1"):     "PowerVR SGX543MP2" ;;
-                "iPhone5,"[1-4]):                             "PowerVR SGX543MP3" ;;
-                "iPhone6,"[1-2] | "iPad4,"[1-9]):             "PowerVR G6430" ;;
-                "iPhone7,"[1-2] | "iPod7,1" | "iPad5,"[1-2]): "PowerVR GX6450" ;;
-                "iPhone8,"[1-4] | "iPad6,1"[12]):             "PowerVR GT7600" ;;
-                "iPhone9,"[1-4] | "iPad7,"[5-6]):             "PowerVR GT7600 Plus" ;;
-                "iPhone10,"[1-6]):                            "Apple Designed GPU (A11)" ;;
-                "iPhone11,"[2468] | "iPad11,"[67]):           "Apple Designed GPU (A12)" ;;
-                "iPhone12,"[1358]):                           "Apple Designed GPU (A13)" ;;
-                "iPhone13,"[1234] | "iPad13,"[12]):           "Apple Designed GPU (A14)" ;;
+                "iPhone4,1" | "iPad2,"[1-7] | "iPod5,1")     gpu="PowerVR SGX543MP2" ;;
+                "iPhone5,"[1-4])                             gpu="PowerVR SGX543MP3" ;;
+                "iPhone6,"[1-2] | "iPad4,"[1-9])             gpu="PowerVR G6430" ;;
+                "iPhone7,"[1-2] | "iPod7,1" | "iPad5,"[1-2]) gpu="PowerVR GX6450" ;;
+                "iPhone8,"[1-4] | "iPad6,1"[12])             gpu="PowerVR GT7600" ;;
+                "iPhone9,"[1-4] | "iPad7,"[5-6])             gpu="PowerVR GT7600 Plus" ;;
+                "iPhone10,"[1-6])                            gpu="Apple Designed GPU (A11)" ;;
+                "iPhone11,"[2468] | "iPad11,"[67])           gpu="Apple Designed GPU (A12)" ;;
+                "iPhone12,"[1358])                           gpu="Apple Designed GPU (A13)" ;;
+                "iPhone13,"[1234] | "iPad13,"[12])           gpu="Apple Designed GPU (A14)" ;;
 
-                "iPad3,"[1-3]):     "PowerVR SGX534MP4" ;;
-                "iPad3,"[4-6]):     "PowerVR SGX554MP4" ;;
-                "iPad5,"[3-4]):     "PowerVR GXA6850" ;;
-                "iPad6,"[3-8]):     "PowerVR 7XT" ;;
+                "iPad3,"[1-3])     gpu="PowerVR SGX534MP4" ;;
+                "iPad3,"[4-6])     gpu="PowerVR SGX554MP4" ;;
+                "iPad5,"[3-4])     gpu="PowerVR GXA6850" ;;
+                "iPad6,"[3-8])     gpu="PowerVR 7XT" ;;
 
                 "iPod1,1" | "iPod2,1")
-                    : "PowerVR MBX Lite"
+                    gpu="PowerVR MBX Lite"
                 ;;
             esac
-            gpu="$_"
         ;;
 
         "Windows")
@@ -3322,7 +3345,7 @@ get_term() {
             ;;
 
             "ruby"|"1"|"tmux"*|"systemd"|"sshd"*|"python"*|\
-            "USER"*"PID"*|"kdeinit"*|"launchd"*|"bwrap")
+            "USER"*"PID"*|"kdeinit"*|"launchd"*|"bwrap"|"ld-linux-*"|"ld-android*")
                 break
             ;;
 
@@ -3332,6 +3355,12 @@ get_term() {
             *"NeoVimServer"*)  term="VimR Terminal" ;;
 
             *)
+                # Detect Termux terminal emulator.
+                if [[ -d /data/data/com.termux ]]; then
+                    term="${TERMINAL:-Termux}"
+                    break
+                fi
+
                 # Fix issues with long process names on Linux.
                 [[ $os == Linux ]] && term=$(realpath "/proc/$parent/exe")
 
@@ -3484,12 +3513,12 @@ END
         ;;
 
         "mate-terminal")
-            # To get the actual config we have to create a temporarily file with the
+            # To get the actual config we have to create a temporary file with the
             # --save-config option.
-            mateterm_config="/tmp/mateterm.cfg"
+            mateterm_config="$(mktemp)"
 
-            # Ensure /tmp exists and we do not overwrite anything.
-            if [[ -d "/tmp" && ! -f "$mateterm_config" ]]; then
+            # Ensure we got a valid temp file.
+            if [[ -f "$mateterm_config" ]]; then
                 mate-terminal --save-config="$mateterm_config"
 
                 role="$(xprop -id "${WINDOWID}" WM_WINDOW_ROLE)"
@@ -3764,7 +3793,7 @@ get_battery() {
         "Linux")
             # We use 'prin' here so that we can do multi battery support
             # with a single battery per line.
-            for bat in "/sys/class/power_supply/"{BAT,axp288_fuel_gauge,CMB}*; do
+            for bat in "/sys/class/power_supply/"{BAT,axp288_fuel_gauge,CMB,battery}*; do
                 capacity="$(< "${bat}/capacity")"
                 status="$(< "${bat}/status")"
 
@@ -4016,7 +4045,7 @@ image_backend() {
         "off") image_backend="off" ;;
 
         "caca" | "catimg" | "chafa" | "jp2a" | "iterm2" | "termpix" |\
-        "tycat" | "w3m" | "sixel" | "pixterm" | "kitty" | "pot", | "ueberzug" |\
+        "tycat" | "w3m" | "sixel" | "pixterm" | "kitty" | "pot" | "ueberzug" |\
          "viu")
             get_image_source
 
@@ -4595,7 +4624,17 @@ info() {
 prin() {
     # If $2 doesn't exist we format $1 as info.
     if [[ "$(trim "$1")" && "$2" ]]; then
-        [[ "$json" ]] && { printf '    %s\n' "\"${1}\": \"${2}\","; return; }
+        [[ "$json" ]] && { printf '%s    "%s": "%s"' "${json_comma:+,${json_comma}}" "${1}" "${2//\"/\\\"}"; json_comma=$'\n'; return; }
+
+        if [[ "$_info_block" ]]; then
+            # Dim label + accent arrow + bright value.
+            printf -v _label "%-10s" "$1"
+            string="  ${subtitle_color}${bold}${_label}${reset} ${underline_color}${separator}${reset} ${info_color}${2}"
+            printf '%b\n' "${text_padding:+\e[${text_padding}C}${zws}${string//\\n}${reset} "
+            ((++info_height))
+            prin=1
+            return
+        fi
 
         string="${1}${2:+: $2}"
     else
@@ -4621,18 +4660,6 @@ prin() {
     prin=1
 }
 
-get_underline() {
-    [[ "$underline_enabled" == "on" ]] && {
-        printf -v underline "%${length}s"
-        printf '%b%b\n' "${text_padding:+\e[${text_padding}C}${zws}${underline_color}" \
-                        "${underline// /$underline_char}${reset} "
-    }
-
-    ((++info_height))
-    length=
-    prin=1
-}
-
 get_bold() {
     case $ascii_bold in
         "on")  ascii_bold='\e[1m' ;;
@@ -4645,11 +4672,21 @@ get_bold() {
     esac
 }
 
+get_topborder() {
+    _info_block=1
+    prin=1
+}
+
+get_bottomborder() {
+    unset _info_block
+    prin=1
+}
+
 trim() {
     set -f
     # shellcheck disable=2048,2086
     set -- $*
-    printf '%s\n' "${*//[[:space:]]/}"
+    printf '%s\n' "$*"
     set +f
 }
 
@@ -4663,6 +4700,8 @@ strip_sequences() {
     strip="${1//$'\e['3[0-9]m}"
     strip="${strip//$'\e['[0-9]m}"
     strip="${strip//\\e\[[0-9]m}"
+    strip="${strip//$'\e['9[0-9]m}"
+    strip="${strip//$'\e['10[0-9]m}"
     strip="${strip//$'\e['38\;5\;[0-9]m}"
     strip="${strip//$'\e['38\;5\;[0-9][0-9]m}"
     strip="${strip//$'\e['38\;5\;[0-9][0-9][0-9]m}"
@@ -4734,8 +4773,9 @@ color() {
 
 stdout() {
     image_backend="off"
+    zws=${zws:-}
     unset subtitle_color colon_color info_color underline_color bold title_color at_color \
-          text_padding zws reset color_blocks bar_color_elapsed bar_color_total \
+          text_padding reset color_blocks bar_color_elapsed bar_color_total \
           c1 c2 c3 c4 c5 c6 c7 c8
 }
 
@@ -4897,7 +4937,7 @@ cache_uname() {
 
     if [[ "$kernel_name" == "Darwin" ]]; then
         # macOS can report incorrect versions unless this is 0.
-        # https://github.com/dylanaraps/neoneofetch/issues/1607
+        # https://github.com/Mark44928/neoneofetch/issues/1607
         export SYSTEM_VERSION_COMPAT=0
 
         IFS=$'\n' read -d "" -ra sw_vers <<< "$(awk -F'<|>' '/key|string/ {print $3}' \
@@ -5025,7 +5065,7 @@ INFO:
                                 NOTE: For FreeBSD and NetBSD-based systems, you need to enable
                                 coretemp kernel module. This only supports newer Intel processors.
 
-    --distro_shorthand on/off   Shorten the output of distro (on, tiny, off)
+    --distro_shorthand on/tiny/off   Shorten the output of distro.
 
                                 NOTE: This option won't work in Windows (Cygwin)
 
@@ -5107,7 +5147,7 @@ BARS:
 IMAGE BACKEND:
     --backend backend           Which image backend to use.
                                 Possible values: 'ascii', 'caca', 'catimg', 'chafa', 'jp2a',
-                                'iterm2', 'off', 'sixel', 'tycat', 'w3m', 'kitty', 'viu'
+                                'iterm2', 'off', 'sixel', 'tycat', 'w3m', 'kitty', 'viu', 'ueberzug'
     --source source             Which image or ascii file to use.
                                 Possible values: 'auto', 'ascii', 'wallpaper', '/path/to/img',
                                 '/path/to/ascii', '/path/to/dir/', 'command output' [ascii]
@@ -5132,7 +5172,7 @@ IMAGE BACKEND:
     --viu source                Shortcut to use 'viu' backend
     --off                       Shortcut to use 'off' backend (Disable ascii art).
 
-    NOTE: 'source; can be any of the following: 'auto', 'ascii', 'wallpaper', '/path/to/img',
+    NOTE: 'source' can be any of the following: 'auto', 'ascii', 'wallpaper', '/path/to/img',
     '/path/to/ascii', '/path/to/dir/'
 
 ASCII:
@@ -5221,6 +5261,7 @@ OTHER:
     --no_config                 Don't create the user config file.
     --print_config              Print the default config file to stdout.
     --stdout                    Turn off all colors and disables any ASCII/image backend.
+    --json                      Output system information as JSON to stdout.
     --help                      Print this text and exit
     --version                   Show neoneofetch version
     -v                          Display error messages.
@@ -5230,10 +5271,10 @@ DEVELOPER:
     --gen-man                   Generate a manpage for Neoneofetch in your PWD. (Requires GNU help2man)
 
 
-Report bugs to https://github.com/dylanaraps/neoneofetch/issues
+Report bugs to https://github.com/Mark44928/neoneofetch/issues
 
 "
-exit 1
+exit 0
 }
 
 get_args() {
@@ -5379,9 +5420,11 @@ get_args() {
             "--gap") gap="$2" ;;
             "--clean")
                 [[ -d "$thumbnail_dir" ]] && rm -rf "$thumbnail_dir"
-                rm -rf "/Library/Caches/neoneofetch/"
-                rm -rf "/tmp/neoneofetch/"
-                exit
+                [[ -d "${cache_dir:-${XDG_CACHE_HOME:-${HOME}/.cache}}" ]] && \
+                    rm -rf "${cache_dir:-${XDG_CACHE_HOME:-${HOME}/.cache}}/neoneofetch/"
+                [[ -d "/Library/Caches/neoneofetch/" ]] && rm -rf "/Library/Caches/neoneofetch/"
+                [[ -d "/tmp/neoneofetch/" ]] && rm -rf "/tmp/neoneofetch/"
+                exit 0
             ;;
 
             "--ascii_colors")
@@ -5419,26 +5462,27 @@ get_args() {
             "--no_config") no_config="on" ;;
             "--stdout") stdout="on" ;;
             "-v") verbose="on" ;;
-            "--print_config") printf '%s\n' "$config"; exit ;;
+            "--print_config") printf '%s\n' "$config"; exit 0 ;;
             "-vv") set -x; verbose="on" ;;
             "--help") usage ;;
             "--version")
                 printf '%s\n' "Neoneofetch $version"
-                exit 1
+                exit 0
             ;;
             "--gen-man")
                 help2man -n "A fast, highly customizable system info script" \
                           -N ./neoneofetch -o neoneofetch.1
-                exit 1
+                exit 0
             ;;
 
             "--json")
                 json="on"
-                unset -f get_title get_cols get_underline
+                unset -f get_title get_cols get_topborder get_bottomborder
 
                 printf '{\n'
+                json_comma=
                 print_info 2>/dev/null
-                printf '    %s\n' "\"Version\": \"${version}\""
+                printf '%s    "%s": "%s"\n' "${json_comma:+,${json_comma}}" "Version" "${version}"
                 printf '}\n'
                 exit
             ;;
@@ -5446,7 +5490,7 @@ get_args() {
             "--travis")
                 print_info() {
                     info title
-                    info underline
+                    info topborder
 
                     info "OS" distro
                     info "Host" model
@@ -5475,6 +5519,7 @@ get_args() {
                     info "Public IP" public_ip
                     info "Users" users
 
+                    info bottomborder
                     info cols
 
                     # Testing.
@@ -5508,6 +5553,7 @@ get_simple() {
             get_distro
             stdout
             simple=1
+            border_length=${length:-20}
             info "$1" "$1"
         }
         shift
@@ -11542,13 +11588,15 @@ EOF
 main() {
     cache_uname
     get_os
+    info_height=0
+    term_run=0
 
     # Load default config.
     eval "$config"
 
     get_args "$@"
-    [[ $verbose != on ]] && exec 2>/dev/null
     get_simple "$@"
+    [[ $verbose != on ]] && exec 2>/dev/null
     get_distro
     get_bold
     get_distro_ascii

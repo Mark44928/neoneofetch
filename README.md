@@ -3,23 +3,57 @@
 
 <p align="center">
 <a href="./LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
-<a href="https://github.com/dylanaraps/neoneofetch/releases"><img src="https://img.shields.io/github/release/dylanaraps/neoneofetch.svg"></a>
-<a href="https://repology.org/metapackage/neoneofetch"><img src="https://repology.org/badge/tiny-repos/neoneofetch.svg" alt="Packaging status"></a>
+<a href="https://github.com/Mark44928/neoneofetch/releases"><img src="https://img.shields.io/github/v/release/Mark44928/neoneofetch?color=blue"></a>
 </p>
 
-<img src="https://i.imgur.com/GFmC5Ad.png" alt="neoneofetch" align="right" height="240px">
+A fork of [neoneofetch](https://github.com/dylanaraps/neoneofetch) with a refreshed visual style and built-in Termux support.
 
-Neoneofetch is a command-line system information tool written in `bash 3.2+`. Neoneofetch displays information about your operating system, software and hardware in an aesthetic and visually pleasing way.
+```
+◇ user@host
+━━━━━━━━━━━━━━━━━━━━━
+  OS        → Android 12 aarch64
+  Host      → MyPhone myT10
+  Kernel    → 4.19.191
+  Uptime    → 1 day, 19 hours
+  Shell     → zsh 5.9.1
+  Packages  → 895 (pkg)
+  Terminal  → Termux
+  CPU       → MT6762 (8) @ 2.001GHz
+  Memory    → 2993MiB / 3813MiB
+```
 
-The overall purpose of Neoneofetch is to be used in screen-shots of your system. Neoneofetch shows the information other people want to see. There are other tools available for proper system statistic/diagnostics.
+## Install
 
-The information by default is displayed alongside your operating system's logo. You can further configure Neoneofetch to instead use an image, a custom ASCII file, your wallpaper or nothing at all.
+### Termux
+```sh
+pkg install git
+git clone https://github.com/Mark44928/neoneofetch
+cd neoneofetch
+bash install.sh
+```
 
-<img src="https://i.imgur.com/lUrkQBN.png" alt="neoneofetch" align="right" height="240px">
+### Linux / macOS
+```sh
+git clone https://github.com/Mark44928/neoneofetch
+cd neoneofetch
+make install
+# or
+bash install.sh
+```
 
-You can further configure Neoneofetch to display exactly what you want it to. Through the use of command-line flags and the configuration file you can change existing information outputs or add your own custom ones.
+## What changed from neoneofetch
 
-Neoneofetch supports almost 150 different operating systems. From Linux to Windows, all the way to more obscure operating systems like Minix, AIX and Haiku. If your favourite operating system is unsupported: Open up an issue and support will be added.
+| Feature | neoneofetch | neoneofetch |
+|---|---|---|
+| Title prefix | None | `◇` diamond |
+| Title underline | `━` thick rule | `━` colored accent |
+| Info labels | `Label: value` | `Label → value` aligned |
+| Separator | `:` or custom | `→` arrow |
+| Progress bars | `▱`/`▰` | `░`/`▓` |
+| Termux | Not supported | Built-in |
+| JSON output | Broken commas | Valid RFC 8259 |
+| Package detection | Single backend | `pkg`, `dpkg`, `apt` |
 
+## License
 
-### More: \[[Dependencies](https://github.com/dylanaraps/neoneofetch/wiki/Dependencies)\] \[[Installation](https://github.com/dylanaraps/neoneofetch/wiki/Installation)\] \[[Wiki](https://github.com/dylanaraps/neoneofetch/wiki)\]
+[MIT](./LICENSE.md)

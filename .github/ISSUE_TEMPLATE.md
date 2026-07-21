@@ -13,8 +13,8 @@ If you're suggesting a new feature then just a description will suffice.
 
 ## Verbose log
 
-1. Run `neoneofetch -vv 2> neofetchlog`
-2. Upload the contents of `neofetchlog` to pastebin, gist or equivalent.
+1. Run `neoneofetch -vv 2> neoneofetchlog`
+2. Upload the contents of `neoneofetchlog` to pastebin, gist or equivalent.
 
 
 
