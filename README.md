@@ -1,4 +1,4 @@
-<h3 align="center"><img src="https://i.imgur.com/ZQI2EYz.png" alt="logo" height="100px"></h3>
+<h3 align="center">neoneofetch</h3>
 <p align="center">A command-line system information tool written in bash 3.2+</p>
 
 <p align="center">
@@ -6,11 +6,11 @@
 <a href="https://github.com/Mark44928/neoneofetch/releases"><img src="https://img.shields.io/github/v/release/Mark44928/neoneofetch?color=blue"></a>
 </p>
 
-A fork of [neoneofetch](https://github.com/dylanaraps/neoneofetch) with a refreshed visual style and built-in Termux support.
+A fork of [neofetch](https://github.com/dylanaraps/neofetch) with a refreshed visual style and built-in Termux support.
 
 ```
 ◇ user@host
-━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━
   OS        → Android 12 aarch64
   Host      → MyPhone myT10
   Kernel    → 4.19.191
@@ -41,9 +41,9 @@ make install
 bash install.sh
 ```
 
-## What changed from neoneofetch
+## What changed from neofetch
 
-| Feature | neoneofetch | neoneofetch |
+| Feature | neofetch | neoneofetch |
 |---|---|---|
 | Title prefix | None | `◇` diamond |
 | Title underline | `━` thick rule | `━` colored accent |
